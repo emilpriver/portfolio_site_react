@@ -1,0 +1,28 @@
+stages:
+  - build
+  - deploy
+  
+variables:
+  TARGET_DIR: /home/portfolio/
+
+
+build:
+  stage: build
+  script: 
+    - echo "Deploy to staging server. at = $PWD"
+    - sudo cp -r -rf $CI_PROJECT_DIR/* /home/portfolio/
+
+  only:
+    - production
+
+deploy_staging:
+  stage: deploy
+  script:
+    - cd /home/frontend 
+    - npm install
+    - npm upgrade
+    - npm run build
+    - echo "finished building frontend"
+  only:
+    - production 
+  when: manual
