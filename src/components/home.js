@@ -41,25 +41,25 @@ export default class Home extends Component {
     window.removeEventListener('scroll', this.onScroll);
     }
     
-  onScroll = (event) => {
-    var current = $('.project').first();
-    $.noConflict();
-    $(document).scroll(function () {
-      if (current.length) {
-          var y = window.scrollY - current.position().top
-          if (!$(current).is('.project:last')) {
-              if (y > -500) {
-                  $(current).addClass('come-in')
-                  current = current.next('.project');
-              }
-          } else {
-              if (y > -500) {
-                  $(current).addClass('come-in')
-              }
-          }
-      }
-    })
-}
+    onScroll = (event) => {
+        var current = $('.project').first();
+        $.noConflict();
+        $(document).scroll(function () {
+        if (current.length) {
+            var y = window.scrollY - current.position().top
+            if (!$(current).is('.project:last')) {
+                if (y > -500) {
+                    $(current).addClass('come-in')
+                    current = current.next('.project');
+                }
+            } else {
+                if (y > -500) {
+                    $(current).addClass('come-in')
+                }
+            }
+        }
+        })
+    }
     
 
   render() {

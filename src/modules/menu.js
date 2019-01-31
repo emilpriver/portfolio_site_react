@@ -74,7 +74,7 @@ export default class Menu extends React.Component{
                                         <Link to="/">Home.</Link>
                                     </li>
                                     <li>
-                                        <Link to="/works">Works.</Link>
+                                        <Link to="/missions">Missions.</Link>
                                     </li>
                                     <li>
                                         <Link to="/about">About.</Link>
