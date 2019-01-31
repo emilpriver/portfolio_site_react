@@ -18,7 +18,7 @@ build:
 deploy_staging:
   stage: deploy
   script:
-    - cd /home/frontend 
+    - cd /home/portfolio 
     - sudp npm install
     - sudo npm upgrade
     - sudo npm run build
