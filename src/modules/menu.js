@@ -1,6 +1,6 @@
 //import react
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default class Menu extends React.Component{
 
@@ -39,12 +39,12 @@ export default class Menu extends React.Component{
 
     render() {
         return (
-                <header className={this.state.header_menu_con + ' faster animated fadeInDown'}>
+                <header className={this.state.header_menu_con}>
                     <div className="con">
                         <div className="headerlogo">
-                            <a href="/"> 
+                            <NavLink to="/" exact>
                                 <img className="header_img" src="/images/vitlogotyp.png" alt="Emil Privér logotyp" />
-                            </a>
+                            </NavLink>
                         </div>
                         <div className="menu_con">
                             <div className="wrapper" onClick={this.handle_menu_open}>
@@ -71,13 +71,13 @@ export default class Menu extends React.Component{
                                 </a>
                                 <ul>
                                     <li>
-                                        <Link to="/">Home.</Link>
+                                        <NavLink to="/" exact>Home.</NavLink>
                                     </li>
                                     <li>
-                                        <Link to="/missions">Missions.</Link>
+                                        <NavLink to="/missions" exact>Missions.</NavLink>
                                     </li>
                                     <li>
-                                        <Link to="/about">About.</Link>
+                                        <NavLink to="/about" exact>About.</NavLink>
                                     </li>
                                 </ul>
                         </div>

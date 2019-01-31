@@ -14,6 +14,15 @@ $open: 'Open Sans', sans-serif
     padding-right: 15px
     box-sizing: border-box
     margin: 0px auto
+//fade_in animation
+@keyframes fade_in 
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+      
+//router transition
+
 
 
 //spinner
@@ -71,44 +80,6 @@ $open: 'Open Sans', sans-serif
         transform: scale(0.9)
 
 
-//fade_in animation
-@keyframes fade_in 
-    0%
-        opacity: 0
-    100%
-        opacity: 1
-
-
-//transition
-.transition-switch 
-    height: 100vh !important
-    overflow: auto !important
-    .current 
-        top: 0
- 
-    &.push.do 
-        top: -100%
-    
- 
-    &.pop.do 
-        top: 100%
-    
-  
- 
-    > .next 
-    &.push 
-        top: 100%
-    
- 
-    &.pop 
-        top: -100%
-    
- 
-    &.push,
-    &.pop 
-        &.do 
-            top: 0
-      
     
   
 
@@ -430,6 +401,7 @@ header
     float: left
     padding-top: 150px
     padding-bottom: 50px
+    min-height: 900px
     background: #1c1c1c
     .con 
         max-width: 1340px
@@ -717,7 +689,7 @@ header
     float: left
     text-align: center
     #work_hero
-        height: 700px
+        height: 900px
         width: 100%
         float: left
         background-position: center center
@@ -923,3 +895,239 @@ footer
                 transition: all 0.3s
                 &:hover
                     color: #fff 
+
+
+//for mobile
+@media screen and (max-width: 1000px)
+    #works
+        .con
+            .projects
+                .project
+                    .project_image
+                        flex: 0 0 100%
+
+                    .project_info
+                        flex: 0 0 100%
+    #works_page
+        .con
+            .project
+                width: 100%
+                padding: 20px
+                &:nth-child(odd)
+                    padding-right: 20px
+
+                    .project__info
+                        top: 0
+                        left: 0
+
+                .project_info
+                    left: 0px !important
+                    width: calc(100% - 40px)
+
+
+    #about 
+        #section_hero
+            height: 400px
+            padding: 20px
+            box-sizing: border-box
+            .wrapper
+                h1 
+                    font-size: 30px
+                
+                .span_wrapper
+                    span 
+                        font-size: 20px
+
+            
+
+        #content
+            .con
+                .instagram
+                    .element
+                        flex: 0 0 50%
+                .project_placeholder
+                    flex-wrap: wrap
+                    a 
+                        margin-bottom: 20px
+                        flex: 0 0 100%
+
+                        &:first-of-type
+                            padding-left: 10px
+                        &:last-of-type
+                            padding-right: 10px
+    header
+        background: #1c1c1c
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.16)
+        .con
+            .headerlogo
+                width: 80%
+
+            .menu_con
+                display: flex
+                .wrapper
+                    cursor: pointer
+
+            .menu
+                transition: all 0.3s
+                max-height: 0px
+                overflow: hidden
+                width: 100%
+                justify-content: flex-start
+                height: auto
+                flex-wrap: wrap
+                
+                a 
+                    padding-left: 20px
+                    box-sizing: border-box
+
+                ul 
+                    width: 100%
+                    flex: 0 0 100%
+                    justify-content: flex-start
+                    flex-wrap: wrap
+                    padding-left: 0px
+
+                    li 
+                        flex: 0 0 100%
+                        margin-bottom: 20px
+                        text-align: left
+
+
+
+
+
+
+@media screen and (max-width: 700px)
+    #works
+        .con
+            h1 
+                font-size: 30px
+
+            h2 
+                font-size: 20px
+            .projects
+                .project
+                    .project_image
+                        height: 400px
+                    .project_info
+                        .inner
+                            h1 
+                                font-size: 30px
+    #works_page
+        .con
+            .title
+                h1 
+                    font-size: 30px
+
+                h2 
+                    font-size: 20px
+            .project
+                width: 100%
+                padding: 0px
+                margin-bottom: 40px
+                &:nth-child(odd)
+                    padding: 0px
+
+                    .project__info
+                        top: 0
+                        left: 0
+                .project_thumbnail
+                    height: 300px
+                .project_info
+                    width: 100%
+                    background: transparent
+                    left: 0px
+                    top: 0px
+                    position: relative
+                    opacity: 1
+                    .wrapper
+                        transform: translateY(0px)
+
+    .hero
+        height: 400px
+        .con
+            .wrapper
+                h1 
+                    font-size: 30px
+                    margin-bottom: 10px
+
+                h2 
+                    font-size: 20px
+
+    #about 
+        #content
+            .con
+                .instagram
+                    h1 
+                        font-size: 30px
+                    .element
+                        flex: 0 0 100%
+                .experience_col
+                    h1 
+                        font-size: 30px
+
+                .partners
+                    h1
+                        font-size: 30px
+
+                    .wrapper
+                        .column
+                            flex: 0 0 50%
+
+    footer
+        .inner
+            .contact
+                margin-bottom: 20px
+                flex: 0 0 100%
+                justify-content: center
+                h1 
+                    font-size: 30px
+                    text-align: center
+                a 
+                    font-size: 20px
+                    text-align: center
+
+            .socials
+                flex: 0 0 100%
+                justify-content: center
+
+                a 
+                    font-size: 20px
+
+                
+                    
+    #single_work
+        #work_hero
+            height: 500px
+            h1
+                font-size: 30px
+        #content
+            .con
+                .project_info 
+                    h1 
+                        font-size: 40px
+                    h2
+                        font-size: 30px
+
+                    a 
+                        max-width: 100%
+                    
+                .project_blocks
+                    .block
+                        .block_info
+                            .wrapper
+                                font-size: 15px
+                                span 
+                                    font-size: 15px
+                                h3
+                                    font-size: 25px
+
+                            
+
+                    
+
+@media screen and (max-width: 430px)
+    #works_page
+        .con
+            .project
+                padding: 0px

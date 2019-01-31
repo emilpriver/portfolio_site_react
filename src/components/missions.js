@@ -15,7 +15,9 @@ export default class Home extends Component {
           works_loaded: false,
         }    
     }
-    componentDidMount() {    
+    componentDidMount() {   
+         //scroll to top
+         window.scrollTo(0, 0) 
         //fetch data
         fetch('https://cdn.emilpriver.com/wp-json/wp/v2/works/')
         .then(async (response) => {return await response.json()})
@@ -65,7 +67,7 @@ export default class Home extends Component {
             <section id="works_page">
                 <div className="con">
                     <div className="title">
-                        <h1>All works.</h1>
+                        <h1>All missions.</h1>
                         <h2>Made with passion.</h2>
                     </div>
                     {this.state.works_loaded ? 

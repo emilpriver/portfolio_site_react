@@ -16,6 +16,8 @@ export default class single_work extends React.Component{
         }
     }
     async componentDidMount() {
+        //scroll to top
+        window.scrollTo(0, 0)
         //setup  Analytics
         ReactGA.initialize('UA-72822877-6');
         ReactGA.pageview(window.location.pathname + window.location.search);

@@ -17,6 +17,8 @@ export default class Home extends Component {
         }    
     }
     componentDidMount() {    
+         //scroll to top
+         window.scrollTo(0, 0)
         //fetch data
         fetch('https://cdn.emilpriver.com/wp-json/wp/v2/works/?per_page=4')
         .then(async (response) => {return await response.json()})

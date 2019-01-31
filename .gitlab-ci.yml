@@ -15,7 +15,7 @@ build:
   only:
     - production
 
-deploy_staging:
+deploy to server:
   stage: deploy
   script:
     - cd /home/portfolio 
