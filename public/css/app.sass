@@ -993,6 +993,49 @@ footer
                         text-align: left
 
 
+#error
+    width: 100%
+    float: left
+    height: 85vh
+    display: flex
+    justify-content: center
+    align-items: center
+    .con
+        +container(1200px)
+        display: flex
+        flex-flow: wrap row
+        width: 100%
+        .col
+            flex: 1
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            img 
+                max-width: 100%
+                width: auto 
+                height: auto
+                display: block
+                max-height: 100%
+
+            .wrapper
+                width: 100%
+                float: left
+
+                h1 
+                    font-size: 50px
+                    color: #fff 
+                    font-family: $font
+                    font-weight: 700
+                    margin-bottom: 40px
+
+                span 
+                    font-size: 17px
+                    color: #fff 
+                    font-family: $font
+                    width: 100%
+                    float: left
+                    margin-bottom: 20px
+
 
 
 
@@ -1123,7 +1166,17 @@ footer
                                     font-size: 25px
 
                             
+    #error
+        .con
+            .col
+                flex: 0 0 100%  
+                justify-content: center
 
+                .wrapper
+                    text-align: center
+                    h1 
+                        font-size: 30px
+                    
                     
 
 @media screen and (max-width: 430px)
@@ -1131,3 +1184,9 @@ footer
         .con
             .project
                 padding: 0px
+    #error
+        .con
+            .col
+                .wrapper
+                    h1 
+                        font-size: 20px

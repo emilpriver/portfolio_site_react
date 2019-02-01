@@ -5,6 +5,7 @@ import Home from './components/home'
 import Missions from './components/missions'
 import About from './components/about'
 import Single_project from './components/single_work'
+import error from './components/error'
 //react transitions
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
@@ -23,6 +24,7 @@ const App = ({ location }) => {
             <Route exact path="/missions" component={Missions}  />
             <Route path="/about" component={About}  />
             <Route path="/works/:slug" component={Single_project}  />
+            <Route component={error} />
           </Switch>
         </CSSTransition>
       </TransitionGroup>
