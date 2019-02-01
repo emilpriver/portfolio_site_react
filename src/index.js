@@ -9,4 +9,4 @@ ReactDOM.render((
         <App />
     </BrowserRouter>
 ), document.getElementById('app'));
-serviceWorker.register();
+serviceWorker.unregister();
