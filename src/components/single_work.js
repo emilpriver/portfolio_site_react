@@ -26,12 +26,16 @@ export default class single_work extends React.Component{
         await fetch('https://cdn.emilpriver.com/wp-json/wp/v2/works?slug=' + slug)
             .then(async response => await response.json())
             .then(response => {
-                this.setState({
-                    project: response[0],
-                    project_loaded: true
-                })
+                if(response.length){
+                    this.setState({
+                        project: response[0],
+                        project_loaded: true
+                    })
+                }else{
+                    return window.location = '/404'
+                }
             })
-            .catch(err => console.log(err))
+            .catch(err => {return window.location = '/404'})
 
         //listen to scroll
         window.addEventListener('scroll', this.onScroll);
