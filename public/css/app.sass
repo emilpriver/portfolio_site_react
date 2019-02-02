@@ -589,15 +589,12 @@ header
             .partners
                 width: 100%
                 float: left
-                
-
+                margin-bottom: 100px              
                 h1 
                     font-size: 80px
                     color: #000 
                     font-family: $font
                     font-weight: 700
-
-
                 .wrapper
                     display: flex
                     flex-wrap: wrap
@@ -650,15 +647,12 @@ header
                         font-weight: 700
                         strong 
                             color: #000 
-
-
             .instagram
                 width: 100%
                 float: left
                 display: flex
                 flex-wrap: wrap
                 margin-bottom: 50px
-
                 h1 
                     color: #000
                     font-size: 80px
@@ -667,22 +661,67 @@ header
                     margin-top: 0px
                     flex: 0 0 100%
                     margin-bottom: 40px
-
                 .element
                     flex: 0 0 33%
                     padding: 10px
                     box-sizing: border-box
                     transition: all 0.3s
                     &:hover
-                        transform: scale(1.02)
-                    
+                        transform: scale(1.02)           
                     .instagram_thumb
                         width: 100%
                         height: 300px
                         display: block
                         background-size: cover
                         background-position: center center
-                
+            .github
+                width: 100%
+                float: left   
+                h1
+                    color: #000
+                    font-size: 80px
+                    font-family: $font
+                    font-weight: 700
+                    margin-top: 0px
+                    flex: 0 0 100%
+                    margin-bottom: 40px
+                .wrapper
+                    width: 100%
+                    float: left
+                    .col
+                        width: 100%
+                        float: left
+                        display: flex
+                        flex-flow: wrap row
+                        margin-bottom: 20px
+                        &:first-of-type
+                            margin-bottom: 30px
+                            h3 
+                                color: #000
+                                font-size: 25px
+
+                            span 
+                                font-size: 20px
+                                color: #000
+                        h3 
+                            flex: 1 0 15%
+                            margin: 0px
+                            font-size: 15px
+                            font-family: $font
+                            font-weight: 700
+                            color: #8e8a8a
+                        a 
+                            color: #8e8a8a
+                            text-decoration: none
+                        .description
+                            flex: 0 0 40%
+                        span 
+                            font-size: 15px
+                            font-family: $font
+                            font-weight: 700
+                            margin: 0px
+                            flex: 1 0 10%
+                            color: #8e8a8a
 //single_work
 #single_work
     width: 100%
@@ -1036,8 +1075,21 @@ footer
                     float: left
                     margin-bottom: 20px
 
+@media screen and (max-width: 900px)
+    #about
+        #content
+            .con
+                .github
+                    .wrapper
+                        .col
+                            h3 
+                                flex: 0 0 50%
 
+                            span 
+                                flex: 0 0 50%
 
+                            .description
+                                flex: 0 0 50%
 
 
 @media screen and (max-width: 700px)
@@ -1116,6 +1168,17 @@ footer
                     .wrapper
                         .column
                             flex: 0 0 50%
+                .github
+                    .wrapper
+                        .col
+                            h3 
+                                flex: 0 0 100%
+
+                            span 
+                                flex: 0 0 100%
+
+                            .description
+                                flex: 0 0 100%
 
     footer
         .inner
@@ -1153,8 +1216,7 @@ footer
                         font-size: 30px
 
                     a 
-                        max-width: 100%
-                    
+                        max-width: 100%  
                 .project_blocks
                     .block
                         .block_info
@@ -1163,9 +1225,7 @@ footer
                                 span 
                                     font-size: 15px
                                 h3
-                                    font-size: 25px
-
-                            
+                                    font-size: 25px                         
     #error
         .con
             .col

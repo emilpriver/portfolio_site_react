@@ -4,6 +4,7 @@ import { setup } from 'axios-cache-adapter'
 import ReactGA from 'react-ga';
 import localforage from 'localforage'
 import memoryDriver from 'localforage-memoryStorageDriver'
+import moment from 'moment'
 
 //modules
 import Menu from '../modules/menu'
@@ -20,8 +21,9 @@ export default class About extends React.Component{
             clients:'',
             clients_loaded: false,
             instagram: '',
-            instagram_loaded: false
-
+            instagram_loaded: false,
+            repos: '',
+            repos_loaded: false
         }
     }
 
@@ -61,7 +63,7 @@ export default class About extends React.Component{
             })              
         })
         .catch(err => console.log(err))        
-
+        //fetch works
         fetch('https://cdn.emilpriver.com/wp-json/wp/v2/works?per_page=3')
         .then(response =>  response.json())
         .then(works => {
@@ -71,8 +73,7 @@ export default class About extends React.Component{
             })
         })
         .catch(err => {})
-
-
+        //fetch clients
         fetch('https://cdn.emilpriver.com/wp-json/wp/v2/clients')
         .then(response =>  response.json())
         .then(works => {
@@ -82,6 +83,19 @@ export default class About extends React.Component{
             })
         })
         .catch(err => {})
+        //fetch github public repos
+        fetch('https://api.github.com/users/emilpriver/repos')
+        .then(async response => { return await response.json()})
+        .then(async response => {
+            if(await response.length){
+                console.log(await response)
+                this.setState({
+                    repos: await response,
+                    repos_loaded: true
+                })
+            }
+        })
+        .catch(err => console.log(err))
     }
 
      render(){
@@ -89,6 +103,7 @@ export default class About extends React.Component{
             <div>
                <Menu />
                     <section id="about">
+
                          <div id="section_hero">
                               <div className="wrapper">
                                    <h1>Emil Privér</h1>                                   
@@ -98,10 +113,11 @@ export default class About extends React.Component{
                                    </div>
                               </div>
                          </div>
-                         <div id="content">
-                              
+
+                         <div id="content">                              
                             {this.state.works_loaded && this.state.clients_loaded && this.state.instagram_loaded ?
                                 <div className="con"> 
+
                                    <div className="project_placeholder">
                                         {this.state.works.map((element,index) => 
                                             <Link key={index} to={'/works/' + element.slug}>
@@ -110,50 +126,75 @@ export default class About extends React.Component{
                                         )}
                                    
                                    </div>
+
                                    <div className="experience_col">
                                         <h1>Experience.</h1>
-
                                         <div className="time">
-                                             <span>2018 - Now</span>
-                                             <p><strong>Heroic</strong> - Stockholm</p>
+                                            <span>2018 - Now</span>
+                                            <p><strong>Heroic</strong> - Stockholm</p>
                                         </div>
-
                                         <div className="time">
-                                             <span>2018 - January 2019</span>
-                                             <p><strong>Rafflestore</strong> - Stockholm</p>
+                                            <span>2018 - January 2019</span>
+                                            <p><strong>Rafflestore</strong> - Stockholm</p>
                                         </div>
-
-                                          <div className="time">
-                                             <span>2018 - December 2018</span>
-                                             <p><strong>Team Property</strong> - Stockholm</p>
+                                        <div className="time">
+                                            <span>2018 - December 2018</span>
+                                            <p><strong>Team Property</strong> - Stockholm</p>
                                         </div>                                       
                                    </div>
 
                                    <div className="instagram">
                                    <h1>Instagram.</h1>
                                         {this.state.instagram.map((element,index) => 
-                                             <div key={index} className="element">
+                                                <div key={index} className="element">
                                                     <a  href={element.link} rel="noopener noreferrer" target="_blank">
                                                         <div className="instagram_thumb" style={{backgroundImage: `url(${element.images.standard_resolution.url})`}} />
                                                     </a>                                   
-                                             </div>
-                                             )}                                  
-                                   
-                                   </div>
+                                                </div>
+                                            )
+                                        }                                
+                                    </div>
 
-                                   <div className="partners">
+                                    <div className="partners">
                                         <h1>Partners.</h1>
-
                                         <div className="wrapper">
-                                             {this.state.clients.map((element,index) => 
-                                                  <div key={index} className="column">
-                                                       <img src={element.thumb_full_url} alt={element.slug} />
-                                                  </div>
-                                             )}                                        
+                                            {this.state.clients.map((element,index) => 
+                                                    <div key={index} className="column">
+                                                        <img src={element.thumb_full_url} alt={element.slug} />
+                                                    </div>
+                                                )
+                                            }                                        
                                         </div>
-                                   </div>  
-                                   </div>
-                            : <div className="spinner"><div></div></div> }     
+                                    </div> 
+
+                                    <div className="github">
+                                        <h1>Github</h1>
+                                        <div className="wrapper">
+                                            <div className="col">
+                                                <h3>Title</h3>
+                                                <span className="description">Description</span>
+                                                <span>Language</span>
+                                                <span>Created At</span>
+                                            </div>
+                                            {   
+                                                this.state.repos.length ? 
+                                                this.state.repos.map((element,key) => {
+                                                return(
+                                                        <div key={key} className="col">
+                                                            <h3><a href={element.html_url} rel="noopener noreferrer" target="_blank">{element.name}</a></h3>
+                                                            <span className="description"><a href={element.html_url} rel="noopener noreferrer" target="_blank">{element.description} </a></span>
+                                                            <span>{element.language}</span>
+                                                            <span>{moment(element.createdat).format('LL')}</span>
+                                                        </div>
+                                                    )
+                                                })
+                                                : ''
+                                            }
+                                        </div>
+                                    </div>
+
+                                </div>
+                            : <div className="spinner"><div></div></div> }    
                                              
                          </div>
                     </section>

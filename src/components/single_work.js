@@ -15,6 +15,7 @@ export default class single_work extends React.Component{
             project_loaded: false
         }
     }
+
     async componentDidMount() {
         //scroll to top
         window.scrollTo(0, 0)
@@ -36,10 +37,10 @@ export default class single_work extends React.Component{
                 }
             })
             .catch(err => {return window.location = '/404'})
-
         //listen to scroll
         window.addEventListener('scroll', this.onScroll);
     }
+
     componentWillUnmount() {
         //remove listener to scroll
         window.removeEventListener('scroll', this.onScroll);
@@ -64,9 +65,7 @@ export default class single_work extends React.Component{
             }
         })
     }
-
-
-
+    
     render(){
         let work = this.state.project
         return(            
