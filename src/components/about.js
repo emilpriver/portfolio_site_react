@@ -84,11 +84,10 @@ export default class About extends React.Component{
         })
         .catch(err => {})
         //fetch github public repos
-        fetch('https://api.github.com/users/emilpriver/repos')
+        fetch('https://api.github.com/users/emilpriver/repos?sort=updated')
         .then(async response => { return await response.json()})
         .then(async response => {
             if(await response.length){
-                console.log(await response)
                 this.setState({
                     repos: await response,
                     repos_loaded: true
@@ -184,7 +183,7 @@ export default class About extends React.Component{
                                                             <h3><a href={element.html_url} rel="noopener noreferrer" target="_blank">{element.name}</a></h3>
                                                             <span className="description"><a href={element.html_url} rel="noopener noreferrer" target="_blank">{element.description} </a></span>
                                                             <span>{element.language}</span>
-                                                            <span>{moment(element.createdat).format('LL')}</span>
+                                                            <span>{moment(element.created_at).format('LL')}</span>
                                                         </div>
                                                     )
                                                 })
