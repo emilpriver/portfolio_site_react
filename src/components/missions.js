@@ -46,12 +46,12 @@ export default class Home extends Component {
       if (current.length) {
           var y = window.scrollY - current.position().top
           if (!$(current).is('.project:last')) {
-              if (y > -500) {
+              if (y > -900) {
                   $(current).addClass('come-in')
                   current = current.next('.project');
               }
           } else {
-              if (y > -500) {
+              if (y > -900) {
                   $(current).addClass('come-in')
               }
           }

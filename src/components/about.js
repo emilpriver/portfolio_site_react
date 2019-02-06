@@ -100,15 +100,14 @@ export default class About extends React.Component{
      render(){
           return(
             <div>
-               <Menu />
+               <Menu white_background={true} />
                     <section id="about">
 
                          <div id="section_hero">
                               <div className="wrapper">
-                                   <h1>Emil Privér</h1>                                   
+                                   <h1>Technic student and developer based in Borås, Sweden</h1>                                   
                                    <div className="span_wrapper">
-                                        <span>Front End developer based in Borås, Sweden.</span>
-                                        <span>I code stuff I belive people like.</span>
+                                        <i className="fas fa-long-arrow-alt-down"></i>
                                    </div>
                               </div>
                          </div>

@@ -8,7 +8,8 @@ export default class Menu extends React.Component{
         super(props)
         this.state = {
             header_menu_con: '',
-            handle_menu_open_class: ''
+            handle_menu_open_class: '',
+            white_background: this.props.white_background ? this.props.white_background : false
         }
         this.handle_menu_open = this.handle_menu_open.bind(this);
     }
@@ -20,18 +21,18 @@ export default class Menu extends React.Component{
         window.removeEventListener('scroll', this.onScroll);
     }
 
-    onScroll = (event) => {
+    onScroll = () => {
         if (window.scrollY > 50) {
             this.setState({
-                header_menu_con: 'scrolled'
+                header_menu_scrolled: true
             })
         } else {
             this.setState({
-                header_menu_con: ''
+                header_menu_scrolled: false
             })
         }
     }
-    handle_menu_open = (event) => {
+    handle_menu_open = () => {
         this.setState(prevState => ({
             handle_menu_open_class: !prevState.handle_menu_open_class
         }))
@@ -39,11 +40,19 @@ export default class Menu extends React.Component{
 
     render() {
         return (
-                <header className={this.state.header_menu_con}>
+                <header className={(this.state.header_menu_scrolled ? 'scrolled' : '' ) + (this.state.white_background ? ' white_background' : '')}>
                     <div className="con">
                         <div className="headerlogo">
                             <NavLink to="/" exact>
-                                <img className="header_img" src="/images/vitlogotyp.png" alt="Emil Privér logotyp" />
+                                {
+                                    this.state.white_background ? 
+                                        this.state.header_menu_scrolled ?
+                                            <img className="header_img" src="/images/vitlogotyp.png" alt="Emil Privér logotyp" />
+                                        : 
+                                            <img className="header_img" src="/images/logo.png" alt="Emil Privér logotyp" />
+                                    :
+                                        <img className="header_img" src="/images/vitlogotyp.png" alt="Emil Privér logotyp" />
+                                }
                             </NavLink>
                         </div>
                         <div className="menu_con">
