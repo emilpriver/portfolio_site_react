@@ -95,7 +95,7 @@ export default class About extends React.Component{
                          </div>
 
                          <div id="content">                              
-                            {this.state.works_loaded && this.state.clients_loaded && this.state.instagram_loaded ?
+                            {this.state.works_loaded && this.state.clients_loaded ?
                                 <div className="con"> 
 
                                    <div className="project_placeholder">
@@ -125,13 +125,16 @@ export default class About extends React.Component{
 
                                    <div className="instagram">
                                    <h1>Instagram.</h1>
-                                        {this.state.instagram.map((element,index) => 
+                                        {   
+                                            this.state.instagram_loaded ?
+                                            this.state.instagram.map((element,index) => 
                                                 <div key={index} className="element">
                                                     <a  href={element.link} rel="noopener noreferrer" target="_blank">
                                                         <div className="instagram_thumb" style={{backgroundImage: `url(${element.images.standard_resolution.url})`}} />
                                                     </a>                                   
                                                 </div>
                                             )
+                                            : 'Instagram images loading'
                                         }                                
                                     </div>
 
