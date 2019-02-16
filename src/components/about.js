@@ -1,11 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { setup } from 'axios-cache-adapter'
 import ReactGA from 'react-ga';
-import localforage from 'localforage'
-import memoryDriver from 'localforage-memoryStorageDriver'
+import axios from 'axios'
 import moment from 'moment'
-
+import jsonAdapter from 'axios-jsonp'
 //modules
 import Menu from '../modules/menu'
 import Footer from '../modules/footer'
@@ -34,36 +32,16 @@ export default class About extends React.Component{
         ReactGA.initialize('UA-72822877-6');
         ReactGA.pageview(window.location.pathname + window.location.search);
 
-        //fetcj instagram
-        const store = localforage.createInstance({
-
-            driver: [
-                    localforage.INDEXEDDB,
-                    localforage.LOCALSTORAGE,
-                    memoryDriver
-            ],
-            // Prefix all storage keys to prevent conflicts
-            name: 'instagram_cache'
-        })
-        const api = setup({
-                cache: {
-                    maxAge: 15 * 60 * 1000,
-                    store
-                }
-        })
         //fetch instagram
-        await api({
-                url: process.env.REACT_APP_instagram_url,
-                method: 'get',
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
+        await axios({
+            method: 'get',
+            url: process.env.REACT_APP_instagram_url,
+            adapter: jsonAdapter
         })
         .then(response => {
             this.setState({
                 instagram_loaded: true,
-                instagram: response.data.data
+                instagram: response.data.data,
             })              
         })
         .catch(err => console.log(err))        
