@@ -54,7 +54,11 @@ export default class About extends React.Component{
         //fetch instagram
         await api({
                 url: process.env.REACT_APP_instagram_url,
-                method: 'get'
+                method: 'get',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
         })
         .then(response => {
             this.setState({
