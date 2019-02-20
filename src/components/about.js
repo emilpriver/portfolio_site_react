@@ -110,6 +110,10 @@ export default class About extends React.Component{
                                    <div className="experience_col">
                                         <h1>Experience.</h1>
                                         <div className="time">
+                                            <span>2019 - Now</span>
+                                            <p><strong>Rivercode</strong> - Borås</p>
+                                        </div>
+                                        <div className="time">
                                             <span>2018 - Now</span>
                                             <p><strong>Heroic</strong> - Stockholm</p>
                                         </div>
