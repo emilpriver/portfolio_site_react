@@ -23,8 +23,6 @@ $open: 'Open Sans', sans-serif
       
 //router transition
 
-
-
 //spinner
 .spinner 
     display: inline-block
@@ -241,38 +239,51 @@ header
         width: 100%
 
         .wrapper
-            +container(1340px)
+            +container(1350px)
             text-align: left
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            .text
+                flex: 0 0 50%
 
-            h1
-                font-size: 60px
-                font-family: $font
-                font-weight: 700
-                margin-bottom: 0px
-                color: #fff
+                h1
+                    font-size: 40px
+                    font-family: $font
+                    font-weight: 700
+                    margin-bottom: 0px
+                    color: #fff
 
-            h2
-                margin-top: 0px
-                font-size: 40px
-                font-family: $font
-                font-weight: 700
-                margin-top: 0px
-                color: rgba(255,255,255,0.6)
-
-            .socials
-                width: 100%
-                float: left
-
-                a
-                    font-size: 30px
-                    color: rgba(255,255,255,0.7)
-                    margin-right: 20px
-                    transition: all 0.3s
-                    transition-timing-function: ease
-                    transition: all 0.3s
-
-                    &:hover
+                    * 
                         color: #fff
+
+                .socials
+                    width: 100%
+                    float: left
+
+                    a
+                        font-size: 30px
+                        color: rgba(255,255,255,0.7)
+                        margin-right: 20px
+                        transition: all 0.3s
+                        transition-timing-function: ease
+                        transition: all 0.3s
+
+                        &:hover
+                            color: #fff
+            
+            .image
+                flex: 1
+                text-align: center
+
+                img
+                    max-width: 100%
+                    margin: 0px auto
+                    max-height: 300px
+                    height: auto 
+                    width: auto 
+                    display: block
+
 
 
 
@@ -897,6 +908,14 @@ footer
     box-sizing: border-box
     background: #171718
     overflow: hidden
+    .owl
+        width: 100%
+        color: #fff
+        font-size: 10px
+        float: left
+        font-family: $font
+        text-align: center
+        text-decoration: none
     .inner
         +container(1340px)
         width: 100%
@@ -1152,6 +1171,10 @@ footer
         height: 400px
         .con
             .wrapper
+                .text
+                    flex: 0 0 100%
+                .image
+                    display: none
                 h1 
                     font-size: 30px
                     margin-bottom: 10px
