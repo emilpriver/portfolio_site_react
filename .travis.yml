@@ -1,0 +1,11 @@
+language: node_js
+
+sudo: required
+
+script:
+ - 'cd /home/portfolio'
+ - 'sudo git fetch -all'
+ - 'sudo yarn install'
+ - 'sudo yarn upgrade'
+ - 'sudo yarn build'
+ - 'echo done'

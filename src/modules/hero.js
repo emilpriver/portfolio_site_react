@@ -21,9 +21,6 @@ export default class Menu extends React.Component{
                                 </Typing>
                             </h1>
                         </div>   
-                        <div className="image">
-                            <img src="https://emilpriver-spaces.ams3.cdn.digitaloceanspaces.com/portfolio/owl.png" alt="owl"/>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ body
 
 $font:  'Montserrat', sans-serif
 
-$open: 'Open Sans', sans-serif
+$raleway: 'Raleway', sans-serif
     
 =container($width)
     max-width: $width
@@ -224,8 +224,8 @@ header
         transform: translateY(0px)
 .hero
     width: 100%
-    height: 600px
-    background: #1b1b1b
+    height: 900px
+    background: #fff
     position: relative
     z-index: 1
     overflow: hidden
@@ -240,22 +240,22 @@ header
 
         .wrapper
             +container(1350px)
-            text-align: left
+            text-align: center
             display: flex
             flex-wrap: wrap
             align-items: center
             .text
-                flex: 0 0 50%
+                flex: 0 0 100%
 
                 h1
-                    font-size: 40px
+                    font-size: 80px
                     font-family: $font
                     font-weight: 700
                     margin-bottom: 0px
-                    color: #fff
+                    color: #000
 
                     * 
-                        color: #fff
+                        color: #000
 
                 .socials
                     width: 100%
@@ -263,40 +263,58 @@ header
 
                     a
                         font-size: 30px
-                        color: rgba(255,255,255,0.7)
+                        color: rgba(0,0,0,0.7)
                         margin-right: 20px
                         transition: all 0.3s
                         transition-timing-function: ease
                         transition: all 0.3s
 
                         &:hover
-                            color: #fff
+                            color: #000
             
-            .image
-                flex: 1
-                text-align: center
-
-                img
-                    max-width: 100%
-                    margin: 0px auto
-                    max-height: 300px
-                    height: auto 
-                    width: auto 
-                    display: block
 
 
+#about_overview
+    width: 100%
+    float: left
+    padding-top: 100px
+    padding-bottom: 300px
+    background: #fff
+    .con
+        +container(1340px)
 
+        h2 
+            font-family: $font
+            font-weight: 700
+            width: 100%
+            text-align: center
+            margin-bottom: 40px
+            font-size: 30px
 
+        .wrapper
+            width: 100%
+            max-width: 800px
+            margin: 0px auto
+            
+            *
+                font-family: $raleway
+                font-size: 20px
+                color: #2d2b2b
+                font-weight: 600
+            
+            p 
+                margin-bottom: 50px
+        
 //works
 #works
     width: 100%
     float: left
     padding-bottom: 50px
-    background: #f4f4f4
+    background: #fff
     padding-top: 10px
 
     .con
-        +container(1340px)
+        +container(100%)
 
         h1
             font-size: 60px
@@ -323,8 +341,8 @@ header
                 opacity: 1 !important
             .project
                 position: relative
-                width: 100%
-                margin-bottom: 200px
+                width: 50%
+                margin-bottom: 50px
                 float: left
                 box-sizing: border-box
                 transform: translateY(100px)
@@ -332,26 +350,19 @@ header
                 transition-timing-function: easeIn
                 opacity: 0
                 display: flex
-                flex-wrap: wrap
+                flex-flow: wrap row
+                padding: 30px
         
                 .project_image
-                    flex: 1
+                    width: 100%
+                    float: left
+                    margin-bottom: 40px
                     z-index: 1
-                    height: 600px
+                    height: 800px
                     position: relative
                     overflow: hidden
                     box-shadow: 0px 3px 6px rgba(0,0,0,0.6)
 
-                    &::before
-                        content: " "
-                        position: absolute
-                        top: 0
-                        left: 0
-                        width: 100%
-                        height: 100%
-                        background: linear-gradient(180deg,rgba(28,27,33,0),#1c1b21)
-                        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001c1b21",endColorstr="#1c1b21",GradientType=0)
-                        z-index: 2
                     img
                         z-index: 1
                         position: absolute
@@ -365,59 +376,56 @@ header
                         display: block
 
                 .project_info
-                    flex: 1
+                    width: 100%
+                    float: left
                     z-index: 5
-                    padding: 40px
                     box-sizing: border-box
                     text-align: left
                     display: flex
-                    justify-content: center
+                    flex-flow: row wrap
                     align-items: center
-                    text-align: center
+                    height: 50px
                     
                     a
-                        width: 100%
-                        float: left
-                        margin-bottom: 2
                         text-decoration: none
-                        
-                    .inner
                         text-align: left
-                        width: 100%
+                        float: left
+                        margin-right: 20px
+                        &:last-of-type
+                            text-align: right
+                    span
+                        margin: 0px
+                        color: rgb(109, 109, 109)
+                        font-size: 25px
+                        font-family: $raleway
+                        font-weight: 600
+                        padding-left: 40px
+                    h1
+                        margin: 0px
+                        color: #000
+                        font-size: 25px
+                        font-family: $raleway
+                        font-weight: 600
+                        font-stretch: 100%
+                        position: relative
+                        &::after
+                            content: " "
+                            position: absolute
+                            top: 50%
+                            left: 100%
+                            transform: translateY(-50%)
+                            height: 2px
+                            width: 20px
+                            display: block
+                            background: #000
+                            margin-left: 20px
 
-                        span
-                            margin: 0px
-                            color: rgb(109, 109, 109)
-                            font-size: 12px
-                            font-family: $open
-                            font-weight: 700
-
-                        h1
-                            margin: 0px
-                            color: #000
-                            font-size: 50px
-                            font-family: $open
-                            font-weight: 700
-                            font-stretch: 100%
-                   
-                        p 
-                            font-size: 20px
-                            color: rgb(109, 109, 109)
-                            font-family: $open
-                            font-weight: 700
-                            margin: 0px
-
-                            *
-                                font-size: 20px
-                                color: rgb(109, 109, 109)
-
-                        .explore
-                            margin-top: 30px
-                            font-size: 18px
-                            color: #000
-                            text-decoration: underline
-                            font-family: $open
-                            font-weight: 700
+                    .explore
+                        font-size: 18px
+                        color: #000
+                        text-decoration: underline
+                        font-family: $font
+                        font-weight: 700
 //work page
 #works_page
     width: 100%
@@ -871,13 +879,13 @@ header
                             text-align: left
                             float: left
                             margin: 0px auto
-                            font-family: $open
+                            font-family: $raleway
                             font-weight: 700
                             color: #000
                             font-size: 20px
                         
                             *
-                                font-family: $open
+                                font-family: $raleway
 
                             h1,h2,h3,h5,h6
                                 color: #000

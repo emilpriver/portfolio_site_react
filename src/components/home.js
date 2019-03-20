@@ -6,6 +6,7 @@ import Nav from '../modules/menu'
 import Footer from '../modules/footer'
 import Hero from '../modules/hero'
 import Singleproduct from '../modules/single_product'
+import About from '../components/about-content'
 
 export default class Home extends Component {
 
@@ -67,12 +68,11 @@ export default class Home extends Component {
   render() {
     return (
         <div>
-            <Nav />
+            <Nav white_background={true}  />
             <Hero />
+            <About />
             <section id="works">
                 <div className="con">
-                    <h1>My projects</h1>
-                    <h2>Made with passion</h2>
                     <div className="projects">
                         {this.state.works_loaded ? 
                             this.state.works.map((data,key) => <Singleproduct key={key} element={data} /> )

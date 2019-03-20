@@ -15,12 +15,8 @@ export default class work_loop_item extends React.Component{
                     </div>
 
                     <div className="project_info">
-                        <div className="inner">
-                            <Link to={element.link}><span>{element.project_info}</span></Link>
-                            <Link to={element.link}><h1>{element.title.rendered}</h1></Link>
-                            <Link to={element.link}><span dangerouslySetInnerHTML={{ __html: element.content.rendered }}></span></Link>
-                            <Link to={element.link} className="explore">Explore.</Link>
-                        </div>
+                        <Link className="" to={element.link}><h1 >{element.title.rendered}</h1></Link>
+                        <Link className="" to={element.link}><span >{element.project_info}</span></Link>
                     </div>
             </div>
         )
