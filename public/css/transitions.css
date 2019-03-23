@@ -6,8 +6,7 @@
 }
 .transition-appear.transition-appear-active {
   opacity: 1;
-  transition: opacity 1000ms linear;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 800ms linear;
 }
 
 /* enter */
@@ -29,7 +28,6 @@
 .transition-exit.transition-exit-active {
     transition: opacity 0.8s ease-in-out;
     opacity: 0;
-    transition: opacity 5000ms linear;
 }
 .transition-exit-done {
     transition: opacity 0.8s ease-in-out;

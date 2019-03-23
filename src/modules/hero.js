@@ -6,7 +6,7 @@ export default class Menu extends React.Component{
         return(
             <div className="hero">
                 <div className="con">
-                    <div className="wrapper faster delay-1s animated fadeInUp">
+                    <div className="wrapper faster">
                         <div className="text"> 
                             <h1>
                                 <Typing> 

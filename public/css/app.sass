@@ -3,8 +3,9 @@ body
     padding: 0px
     overflow-x: hidden
     background: #1c1c1c
+    position: relative
 
-$font:  'Montserrat', sans-serif
+$font:  'Roboto', sans-serif
 
 $raleway: 'Raleway', sans-serif
     
@@ -152,7 +153,7 @@ header
                     margin-right: 10px
                     a 
                         text-decoration: none 
-                        font-weight: 700
+                        font-weight: 500
                         font-family: $font
                         font-size: 18px
                         color: #fff
@@ -188,6 +189,10 @@ header
 .white_background
     background: #fff 
     .con
+        .menu_con
+            .wrapper
+                div 
+                    background: #000
         .menu
             a 
                 color: #000
@@ -248,9 +253,9 @@ header
                 flex: 0 0 100%
 
                 h1
-                    font-size: 80px
+                    font-size: 60px
                     font-family: $font
-                    font-weight: 700
+                    font-weight: 400
                     margin-bottom: 0px
                     color: #000
 
@@ -281,26 +286,30 @@ header
     padding-bottom: 300px
     background: #fff
     .con
-        +container(1340px)
+        +container(1200px)
 
         h2 
             font-family: $font
-            font-weight: 700
+            font-weight: 500
             width: 100%
-            text-align: center
+            text-align: left
             margin-bottom: 40px
             font-size: 30px
 
         .wrapper
             width: 100%
-            max-width: 800px
-            margin: 0px auto
             
             *
                 font-family: $raleway
                 font-size: 20px
-                color: #2d2b2b
-                font-weight: 600
+                color: #767676
+                font-weight: 500
+                line-height: 1.7
+                letter-spacing: -.2px
+
+            strong 
+                color: #000
+                font-weight: 700
             
             p 
                 margin-bottom: 50px
@@ -314,22 +323,15 @@ header
     padding-top: 10px
 
     .con
-        +container(100%)
-
-        h1
-            font-size: 60px
-            font-family: $font
-            font-weight: 700
-            margin-bottom: 0px
-            color: #000
+        +container(1200px)
 
         h2
-            font-size: 40px
+            font-size: 30px
             font-family: $font
-            font-weight: 400
-            color: #8e8a8a
+            font-weight: 500
+            color: #000
             margin-top: 0px
-            margin-bottom: 100px
+            margin-bottom: 50px
 
         .projects
             width: 100%
@@ -341,7 +343,7 @@ header
                 opacity: 1 !important
             .project
                 position: relative
-                width: 50%
+                width: 100%
                 margin-bottom: 50px
                 float: left
                 box-sizing: border-box
@@ -349,19 +351,36 @@ header
                 transition: all 0.3s
                 transition-timing-function: easeIn
                 opacity: 0
-                display: flex
-                flex-flow: wrap row
-                padding: 30px
+                height: 400px
+
+                &:hover 
+                    .project_image
+                        &::before
+                            opacity: 1
+                    .project_info
+                        opacity: 1
         
                 .project_image
                     width: 100%
                     float: left
                     margin-bottom: 40px
                     z-index: 1
-                    height: 800px
-                    position: relative
+                    height: 400px
                     overflow: hidden
                     box-shadow: 0px 3px 6px rgba(0,0,0,0.6)
+                    position: absolute
+
+                    &::before
+                        content: " "
+                        opacity: 0
+                        z-index: 2
+                        width: 100%
+                        transition: opacity 0.3s
+                        height: 100%
+                        position: absolute
+                        top: 0
+                        left: 0
+                        background: linear-gradient(rgba(255, 255, 255, 0) 0%, #5f79fb 100%)
 
                     img
                         z-index: 1
@@ -381,48 +400,36 @@ header
                     z-index: 5
                     box-sizing: border-box
                     text-align: left
-                    display: flex
-                    flex-flow: row wrap
-                    align-items: center
-                    height: 50px
-                    
+                    position: absolute
+                    bottom: 50px
+                    left: 50px
+                    opacity: 0
+                    transition: all 0.3s
                     a
                         text-decoration: none
                         text-align: left
                         float: left
                         margin-right: 20px
-                        &:last-of-type
-                            text-align: right
+                        width: 100%
                     span
                         margin: 0px
-                        color: rgb(109, 109, 109)
-                        font-size: 25px
-                        font-family: $raleway
-                        font-weight: 600
-                        padding-left: 40px
-                    h1
+                        color: #fff
+                        font-size: 15px
+                        font-family: $font
+                        font-weight: 400
+
+                    h2
                         margin: 0px
-                        color: #000
-                        font-size: 25px
-                        font-family: $raleway
-                        font-weight: 600
-                        font-stretch: 100%
+                        color: #fff
+                        font-size: 30px
+                        font-family: $font
+                        font-weight: 500
                         position: relative
-                        &::after
-                            content: " "
-                            position: absolute
-                            top: 50%
-                            left: 100%
-                            transform: translateY(-50%)
-                            height: 2px
-                            width: 20px
-                            display: block
-                            background: #000
-                            margin-left: 20px
+                        margin-bottom: 10px
 
                     .explore
                         font-size: 18px
-                        color: #000
+                        color: #fff
                         text-decoration: underline
                         font-family: $font
                         font-weight: 700
@@ -450,7 +457,7 @@ header
                 font-size: 80px
                 color: #fff 
                 font-family: $font
-                font-weight: 700
+                font-weight: 400
                 margin-bottom: 0px
 
             h2 
@@ -458,7 +465,7 @@ header
                 font-size: 40px
                 margin-top: 0px
                 font-family: $font
-                font-weight: 700
+                font-weight: 400
         .come-in
             opacity: 1 !important
             transform: translateY(0px) !important
@@ -521,13 +528,13 @@ header
                         width: 100%
                         color: #fff 
                         font-family: $font
-                        font-weight: 700
+                        font-weight: 400
                         font-size: 30px
                         margin-bottom: 10px
                     span 
                         width: 100%
                         font-size: 16px
-                        font-weight: 700
+                        font-weight: 400
                         font-family: $font
                         margin-top: 0px
                         color: #b1aeae 
@@ -559,7 +566,7 @@ header
                 font-family: $font
                 width: 100%
                 float: left
-                font-weight: 700
+                font-weight: 400
                 margin-bottom: 30px
             .span_wrapper 
                 max-width: 600px
@@ -621,10 +628,10 @@ header
                 float: left
                 margin-bottom: 100px              
                 h1 
-                    font-size: 80px
+                    font-size: 30px
                     color: #2f2e2e 
                     font-family: $font
-                    font-weight: 700
+                    font-weight: 500
                 .wrapper
                     display: flex
                     flex-wrap: wrap
@@ -649,9 +656,9 @@ header
                 float: left
                 h1 
                     color: #2f2e2e
-                    font-size: 80px
+                    font-size: 30px
                     font-family: $font
-                    font-weight: 700
+                    font-weight: 500
                     margin-top: 0px
 
                 .time
@@ -666,7 +673,7 @@ header
                         width: 100%
                         float: left
                         font-family: $font
-                        font-weight: 700
+                        font-weight: 400
 
                     p 
                         width: 100%
@@ -674,7 +681,7 @@ header
                         color: #8e8a8a
                         font-size: 20px
                         font-family: $font
-                        font-weight: 700
+                        font-weight: 400
                         strong 
                             color: #000 
             .instagram
@@ -685,9 +692,9 @@ header
                 margin-bottom: 50px
                 h1 
                     color: #2f2e2e
-                    font-size: 80px
+                    font-size: 30px
                     font-family: $font
-                    font-weight: 700
+                    font-weight: 500
                     margin-top: 0px
                     flex: 0 0 100%
                     margin-bottom: 40px
@@ -709,9 +716,9 @@ header
                 float: left   
                 h1
                     color: #2f2e2e
-                    font-size: 80px
+                    font-size: 30px
                     font-family: $font
-                    font-weight: 700
+                    font-weight: 500
                     margin-top: 0px
                     flex: 0 0 100%
                     margin-bottom: 40px
@@ -738,7 +745,7 @@ header
                             margin: 0px
                             font-size: 15px
                             font-family: $font
-                            font-weight: 700
+                            font-weight: 400
                             color: #8e8a8a
                         a 
                             color: #8e8a8a
@@ -748,7 +755,7 @@ header
                         span 
                             font-size: 15px
                             font-family: $font
-                            font-weight: 700
+                            font-weight: 400
                             margin: 0px
                             flex: 1 0 10%
                             color: #8e8a8a
@@ -782,7 +789,7 @@ header
             color: #fff 
             font-family: $font
             z-index: 10            
-            font-weight: 700
+            font-weight: 400
 
     .spinner
         margin-top: 100px
@@ -804,7 +811,7 @@ header
                 h2 
                     font-size: 50px
                     font-family: $font
-                    font-weight: 700
+                    font-weight: 400
                     color: #000
                     margin-bottom: 0px
 
@@ -814,7 +821,7 @@ header
                     margin-bottom: 20px
                     color: #000 
                     font-family: $font
-                    font-weight: 700
+                    font-weight: 400
 
                 .product_description
                     margin-bottom: 50px
@@ -881,7 +888,7 @@ header
                             margin: 0px auto
                             font-family: $raleway
                             font-weight: 700
-                            color: #000
+                            color: #767676
                             font-size: 20px
                         
                             *
@@ -1141,7 +1148,10 @@ footer
                 .project
                     .project_image
                         height: 400px
+                        &::before
+                            opacity: 1
                     .project_info
+                        opacity: 1
                         .inner
                             h1 
                                 font-size: 30px
@@ -1181,6 +1191,9 @@ footer
             .wrapper
                 .text
                     flex: 0 0 100%
+
+                    h1 
+                        font-size: 26px
                 .image
                     display: none
                 h1 

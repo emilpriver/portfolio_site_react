@@ -8,6 +8,7 @@ export default class work_loop_item extends React.Component{
         let element = this.props.element
         return (
                 <div className="project">
+                
                     <div className="project_image">
                         <Link to={element.link}>
                             <img src={element.thumb_full_url} alt={element.title.rendered}  />
@@ -15,7 +16,7 @@ export default class work_loop_item extends React.Component{
                     </div>
 
                     <div className="project_info">
-                        <Link className="" to={element.link}><h1 >{element.title.rendered}</h1></Link>
+                        <Link className="" to={element.link}><h2 >{element.title.rendered}</h2></Link>
                         <Link className="" to={element.link}><span >{element.project_info}</span></Link>
                     </div>
             </div>
