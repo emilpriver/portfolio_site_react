@@ -20,7 +20,10 @@ export default class Menu extends React.Component{
                                     <span> Contact me at hello@emilpriver.com </span>
                                 </Typing>
                             </h1>
-                        </div>   
+                        </div>  
+                        <div className="image">
+                            <img src="https://emilpriver-spaces.ams3.cdn.digitaloceanspaces.com/emilpriver/computer.png" alt="Emil Priver Computer" />
+                        </div> 
                     </div>
                 </div>
             </div>
