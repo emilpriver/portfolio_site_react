@@ -18,7 +18,7 @@ const App = ({ location }) => {
   const timeout = { enter: 500, exit: 500 }
   return (
       <TransitionGroup component="main" className="page-main">
-        <CSSTransition key={currentKey} timeout={timeout} classNames="transition" appear>
+        <CSSTransition key={currentKey} unmountOnExit timeout={timeout} classNames="transition" appear>
           <Switch location={location}>
             <Route exact path="/" component={Home}  />
             <Route exact path="/missions" component={Missions}  />

@@ -5,8 +5,8 @@ import ReactGA from 'react-ga'
 import Nav from '../modules/menu'
 import Footer from '../modules/footer'
 import Hero from '../modules/hero'
-import Singleproduct from '../modules/single_product'
-import About from '../components/about-content'
+import Singleproject from '../modules/single_project'
+import About from '../modules/about-content'
 
 export default class Home extends Component {
 
@@ -70,16 +70,17 @@ export default class Home extends Component {
         <div>
             <Nav white_background={true}  />
             <Hero />
-            <About />
             <section id="works">
                 <div className="con">
+                    <h2> Portfolio </h2>
                     <div className="projects">
                         {this.state.works_loaded ? 
-                            this.state.works.map((data,key) => <Singleproduct key={key} element={data} /> )
+                            this.state.works.map((data,key) => <Singleproject key={key} element={data} /> )
                         : <div className="spinner"><div></div></div>  }
                     </div>
                 </div>
             </section>
+            <About />
             <Footer />
         </div>
     );

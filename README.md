@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a2529019-9352-4735-adf2-781bc5f11a48/deploy-status)](https://app.netlify.com/sites/mystifying-newton-a1b82e/deploys)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
