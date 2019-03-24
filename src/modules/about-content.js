@@ -13,7 +13,7 @@ export default class About_content extends Component {
                 <div className="wrapper">
 
                     <p>
-                      i'm an <strong>developer</strong> based in <strong>Borås, Sweden</strong> I studied a Systemdeveloper degree in <strong>Varberg, Sweden.</strong> I have been working at startups and fully established companys. I love creating innovative websites and how we can use website to create business. 
+                      I'm an <strong>developer</strong> based in <strong>Borås, Sweden.</strong> I studied a Systemdeveloper degree in <strong>Varberg, Sweden.</strong> I have been working at startups and fully established companys. I love creating innovative websites and how we can use website to create business. 
                     </p>
 
                     <p>

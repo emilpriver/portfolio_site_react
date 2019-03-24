@@ -80,9 +80,13 @@ export default class single_work extends React.Component{
                         <div id="content">
                             <div className="con">
                                 <div className="project_info">
-                                    <h2>{work.project_info}</h2>
-                                    <div className="product_description" dangerouslySetInnerHTML={{__html : work.content.rendered}}></div>
-                                    <a rel="noopener noreferrer" target="_blank" href={work.website_url}>Visit Site</a>
+                                    <div className="col">
+                                        <h2>{work.project_info}</h2>
+                                        <div className="product_description" dangerouslySetInnerHTML={{__html : work.content.rendered}}></div>
+                                    </div>
+                                    <div className="small">
+                                        <a rel="noopener noreferrer" target="_blank" href={work.website_url}><i class="fas fa-link"></i> {work.website_url}</a>
+                                    </div>
                                 </div>       
                                 {(work.blocks && work.blocks.length > 0) ?
                                 <div className="project_blocks">
