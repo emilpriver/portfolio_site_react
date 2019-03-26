@@ -63,12 +63,11 @@ export default class Home extends Component {
   render() {
     return (
         <div>
-            <Nav />
+            <Nav white_background={true} />
             <section id="works_page">
                 <div className="con">
                     <div className="title">
                         <h1>All missions.</h1>
-                        <h2>Made with passion.</h2>
                     </div>
                     {this.state.works_loaded ? 
                     //map the works
