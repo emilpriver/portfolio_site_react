@@ -95,11 +95,11 @@ export default class About extends React.Component{
                                     </p>
 
                                     <p>
-                                        Since I was a little <strong>boy</strong>, I've been fascinated by how we use technology and interact with things that happen on screen. I got my first <strong>computer</strong> when i was very young, It was an old computer with windows 1998 OS installed. Even if the performance was poor and the startup took up to 10 minutes, did I love to use the computer. I played games, explored stuffs on the computer, even had some talk with <strong>Office Assistant.</strong> I still have this interest today. I work daily with a <strong>computer</strong> in different ways, set up systems for website or apps, build and modify components in my computer. I also read a lot of articles about how companies develop the technology and the future.
+                                        Since I was a little <strong>boy</strong>, I've been fascinated by how we use technology and interact with things that happen on screen. I got my first <strong>computer</strong> when i was very young, It was an old computer with windows 1998 OS installed. Even if the performance was poor and the startup took up to 10 minutes, did I love to use the computer. I played games, explored stuff on the computer, even had some talk with <strong>Office Assistant.</strong> I still have this interest today. I work daily with a <strong>computer</strong> in different ways, set up systems for website or apps, build and modify components in my computer. I also read a lot of articles about how companies develop the technology and the future.
                                     </p>
 
                                     <p>
-                                        I love programming and how programming develops ours <strong>society</strong> and what we can do with programming to create awesome stuffs. How we can use programming in school to create system that evolve the students knowledge of different stuffs. I daily read alot of information how companys work to develop the society into a better place and I love it.
+                                        I love programming and how programming develops ours <strong>society</strong> and what we can do with programming to create awesome stuff. How we can use programming in school to create system that evolve the students knowledge of different stuff. I daily read alot of information how companys work to develop the society into a better place and I love it.
                                     </p>  
 
                               </div>
