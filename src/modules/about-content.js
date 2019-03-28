@@ -19,6 +19,7 @@ export default class About_content extends Component {
                     <p>
                       I love programming and how programming develops ours <strong>society</strong> and what we can do with programming to create awesome stuffs. How we can use programming in school to create system that evolve the students knowledge of different stuffs. I daily read alot of information how companys work to develop the society into a better place and I love it.
                     </p>
+                    
                 </div>
                 
             </div>

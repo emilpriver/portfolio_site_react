@@ -35,7 +35,7 @@ export default class About extends React.Component{
         //fetch instagram
         await axios({
             method: 'get',
-            url: process.env.REACT_APP_instagram_url,
+            url: 'https://api.instagram.com/v1/users/514085920/media/recent/?access_token=514085920.87e6616.a536c234a15b488392cb280e966d43b2&count=6',
             adapter: jsonAdapter
         })
         .then(response => {
@@ -87,10 +87,21 @@ export default class About extends React.Component{
 
                          <div id="section_hero">
                               <div className="wrapper">
-                                   <h1>Technic student and developer based in Borås, Sweden</h1>                                   
-                                   <div className="span_wrapper">
-                                        <i className="fas fa-long-arrow-alt-down"></i>
-                                   </div>
+
+                                   <h1><strong>Technic</strong> student and <strong>developer</strong> based in <strong>Borås, Sweden.</strong></h1>  
+
+                                   <p>
+                                        I'm an <strong>developer</strong> based in <strong>Borås, Sweden.</strong> I studied a Systemdeveloper degree in <strong>Varberg, Sweden</strong> and are now studying to become an <strong>IT technician</strong> in <strong>Borås, Sweden.</strong> I have been working at startups and fully established companys. I love creating innovative websites and how we can use website to create business. 
+                                    </p>
+
+                                    <p>
+                                        Since I was a little <strong>boy</strong>, I've been fascinated by how we use technology and interact with things that happen on screen. I got my first <strong>computer</strong> when i was very young, It was an old computer with windows 1998 OS installed. Even if the performance was poor and the startup took up to 10 minutes, did I love to use the computer. I played games, explored stuff on the computer, even had some talk with <strong>Office Assistant.</strong> I still have this interest today. I work daily with a <strong>computer</strong> in different ways, set up systems for website or apps, build and modify components in my computer. I also read a lot of articles about how companies develop the technology and the future.
+                                    </p>
+
+                                    <p>
+                                        I love programming and how programming develops ours <strong>society</strong> and what we can do with programming to create awesome stuff. How we can use programming in school to create system that evolve the students knowledge of different stuff. I daily read alot of information how companys work to develop the society into a better place and I love it.
+                                    </p>  
+
                               </div>
                          </div>
 

@@ -6,7 +6,6 @@ import Nav from '../modules/menu'
 import Footer from '../modules/footer'
 import Hero from '../modules/hero'
 import Singleproject from '../modules/single_project'
-import About from '../modules/about-content'
 
 export default class Home extends Component {
 
@@ -80,7 +79,6 @@ export default class Home extends Component {
                     </div>
                 </div>
             </section>
-            <About />
             <Footer />
         </div>
     );

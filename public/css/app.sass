@@ -31,6 +31,7 @@ $raleway: 'Raleway', sans-serif
     width: 64px
     height: 64px
     transform: rotate(45deg)
+    margin: 0px auto
     transform-origin: 32px 32px
 
 .spinner div 
@@ -88,7 +89,7 @@ header
     transition: all 0.3s
 
     .con
-        max-width: 1200px
+        max-width: 1600px
         margin: 0px auto
         .headerlogo
             float: left
@@ -153,7 +154,7 @@ header
                     margin-right: 10px
                     a 
                         text-decoration: none 
-                        font-weight: 500
+                        font-weight: 400
                         font-family: $font
                         font-size: 18px
                         color: #fff
@@ -205,11 +206,11 @@ header
     background: #1c1c1c
     box-shadow: 0px 3px 6px rgba(0,0,0,0.16)
     .con
-        .menu
-            .menu_con
+        .menu_con
+            .wrapper
                 div 
-                    background: #fff
-
+                    background: #fff !important
+        .menu 
             ul 
                 li 
                     a 
@@ -244,7 +245,7 @@ header
         width: 100%
 
         .wrapper
-            +container(1200px)
+            +container(1600px)
             display: flex
             flex-wrap: wrap
             align-items: center
@@ -285,7 +286,6 @@ header
 
                         &:hover
                             color: #000
-        
 #about_overview
     width: 100%
     float: left
@@ -293,7 +293,7 @@ header
     padding-bottom: 300px
     background: #fff
     .con
-        +container(1200px)
+        +container(1600px)
 
         h2 
             font-family: $font
@@ -330,7 +330,7 @@ header
     padding-top: 10px
 
     .con
-        +container(1200px)
+        +container(1600px)
 
         h2
             font-size: 30px
@@ -448,14 +448,16 @@ header
     padding-top: 150px
     padding-bottom: 50px
     min-height: 900px
-    background: #1c1c1c
+    background: #fff
     .con 
-        max-width: 1340px
+        max-width: 1600px
         margin: 0px auto
         box-sizing: border-box
         padding-left: 10px
         padding-right: 10px
         text-align: center
+        display: flex
+        flex-flow: row wrap
         .title
             width: 100%
             text-align: left
@@ -463,17 +465,11 @@ header
 
             h1 
                 font-size: 80px
-                color: #fff 
+                color: #000 
                 font-family: $font
                 font-weight: 400
                 margin-bottom: 0px
-
-            h2 
-                color: #b1aeae 
-                font-size: 40px
-                margin-top: 0px
-                font-family: $font
-                font-weight: 400
+                
         .come-in
             opacity: 1 !important
             transform: translateY(0px) !important
@@ -482,7 +478,7 @@ header
             opacity: 0
             transform: translateY(100px)
             transition: all 0.3s
-            width: 50%
+            flex: 1 0 50%
             float: left
             padding: 20px 20px 20px 0px
             position: relative
@@ -494,8 +490,32 @@ header
                     top: 20px
                     left: 20px
             &:nth-child(2), &:nth-child(3)
-                opacity: 1 !important
+                opacity: 1 !important s
                 transform: translateY(0px) !important
+
+            &:nth-child(3n + 4)
+                flex: 1 0 100%
+                padding: 20px 0px
+                .project_info
+                    left: 0px
+                    width: 100%
+
+            &:nth-child(3n + 5)
+                flex: 1 0 33%
+                padding: 20px 20px 20px 0px
+                .project_info
+                    left: 0px
+            &:nth-child(3n + 6)
+                flex: 1 0 67%
+                padding: 20px 0px 0px 20px
+                .project_info
+                    left: 20px
+                    height: calc(100% - 40px)
+
+            &:last-of-type
+                padding: 20px 0px
+                .project_info
+                    width: 100%
             &:hover
                 .project_info
                     opacity: 1
@@ -511,26 +531,39 @@ header
                 box-shadow: 0px 3px 6px rgba(0,0,0,0.20)
 
             .project_info
-                width: 100%
                 opacity: 0
                 float: left
                 height: 150px
                 display: flex
-                justify-content: center
+                justify-content: flex-start
                 transition: all 0.3s
-                align-items: center
+                align-items: flex-end
                 top: 20px
                 left: 0px
                 height: calc(100% - 40px)
                 width: calc(100% - 20px)
                 position: absolute
-                background: rgba(0,0,0,0.4)
+
+                &::before
+                    content: " "
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    background: linear-gradient(180deg, rgba(27, 27, 28,0), #1b1b1c)
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001c1b21",endColorstr="#1c1b21",GradientType=0)
+                    z-index: 2
 
                 .wrapper
                     width: 100%
-                    text-align: center
+                    text-align: left
                     transition: all 0.3s
                     transform: translateY(30px)
+                    padding-bottom: 40px
+                    padding-left: 40px
+                    box-sizing: border-box
+                    z-index: 3
 
                     h3 
                         width: 100%
@@ -559,23 +592,44 @@ header
         width: 100%
         float: left
         background: #fff
-        height: 600px
+        min-height: 600px
         display: flex
         justify-content: center
         align-items: center
+        padding-top: 100px
+        box-sizing: border-box
+        padding-bottom: 100px
+        padding-left: 10px
+        padding-right: 10px
 
         .wrapper
             max-width: 1100px
             width: 100%
-            text-align: center
+            text-align: left
+
+            *:not(i)
+                font-family: $raleway
+                font-size: 20px
+                color: #767676
+                font-weight: 500
+                line-height: 1.7
+                letter-spacing: -.2px
+
+            strong 
+                color: #000
+                font-weight: 700
+            
+            p 
+                margin-bottom: 50px
             h1 
-                font-size: 50px
-                color: #000 
+                font-size: 40px
                 font-family: $font
                 width: 100%
                 float: left
                 font-weight: 400
                 margin-bottom: 30px
+                strong
+                    font-size: 40px
             .span_wrapper 
                 max-width: 600px
                 width: 100%
@@ -692,6 +746,7 @@ header
                         font-weight: 400
                         strong 
                             color: #000 
+                            font-weight: 400
             .instagram
                 width: 100%
                 float: left
@@ -910,7 +965,6 @@ header
                             span,p 
                                 font-size: 25px
                             
-
                             h1 
                                 font-size: 60px
                             h2 
@@ -918,9 +972,6 @@ header
                             h3
                                 font-size: 40px
 
-
-             
-           
 //footer
 
 footer 
@@ -1002,8 +1053,8 @@ footer
     #works_page
         .con
             .project
-                width: 100%
-                padding: 20px
+                flex: 0 0 50% !important
+                padding: 20px !important
                 &:nth-child(odd)
                     padding-right: 20px
 
@@ -1013,17 +1064,19 @@ footer
 
                 .project_info
                     left: 0px !important
-                    width: calc(100% - 40px)
-
-
+                    width: calc(100% - 40px) !important
+                    margin-left: 20px
     #about 
         #section_hero
-            height: 400px
-            padding: 20px
             box-sizing: border-box
             .wrapper
                 h1 
-                    font-size: 30px
+                    font-size: 25px
+                    strong
+                        font-size: 25px
+                
+                *
+                    font-size: 16px
                 
                 .span_wrapper
                     span 
@@ -1082,8 +1135,6 @@ footer
                         flex: 0 0 100%
                         margin-bottom: 20px
                         text-align: left
-
-
 #error
     width: 100%
     float: left
@@ -1166,13 +1217,15 @@ footer
     #works_page
         .con
             .title
+                padding-left: 20px
+                box-sizing: border-box
                 h1 
                     font-size: 30px
 
                 h2 
                     font-size: 20px
             .project
-                width: 100%
+                flex: 0 0 100% !important
                 padding: 0px
                 margin-bottom: 40px
                 &:nth-child(odd)
@@ -1188,10 +1241,16 @@ footer
                     background: transparent
                     left: 0px
                     top: 0px
+                    height: auto !important
                     position: relative
                     opacity: 1
+                    &::before 
+                        display: none
                     .wrapper
                         transform: translateY(0px)
+                        padding: 0px
+                        h3,span
+                            color: #000
 
     .hero
         height: 400px

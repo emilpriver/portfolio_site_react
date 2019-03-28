@@ -9,9 +9,6 @@ import error from './components/error'
 //react transitions
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
-
-
-
 const App = ({ location }) => {
   //variables
   const currentKey = location.pathname.split('/')[1] || '/'

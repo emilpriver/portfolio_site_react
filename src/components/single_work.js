@@ -88,6 +88,7 @@ export default class single_work extends React.Component{
                                         <a rel="noopener noreferrer" target="_blank" href={work.website_url}><i class="fas fa-link"></i> {work.website_url}</a>
                                     </div>
                                 </div>       
+                                
                                 {(work.blocks && work.blocks.length > 0) ?
                                 <div className="project_blocks">
                                     {work.blocks.map((element,index) => 
