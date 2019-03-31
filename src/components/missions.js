@@ -30,7 +30,6 @@ export default class Home extends Component {
         .catch(err => {})
    
         //google analytics
-        ReactGA.initialize('UA-72822877-6');
         ReactGA.pageview(window.location.pathname + window.location.search);
     }
 
