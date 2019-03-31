@@ -29,7 +29,6 @@ export default class About extends React.Component{
         //scroll to top
         window.scrollTo(0, 0)
         //Google analytics
-        ReactGA.initialize('UA-72822877-6');
         ReactGA.pageview(window.location.pathname + window.location.search);
 
         //fetch instagram
@@ -52,16 +51,6 @@ export default class About extends React.Component{
             this.setState({
                 works: works,
                 works_loaded: true
-            })
-        })
-        .catch(err => {})
-        //fetch clients
-        fetch('https://cdn.emilpriver.com/wp-json/wp/v2/clients')
-        .then(response =>  response.json())
-        .then(works => {
-            this.setState({
-                clients: works,
-                clients_loaded: true
             })
         })
         .catch(err => {})
@@ -106,7 +95,7 @@ export default class About extends React.Component{
                          </div>
 
                          <div id="content">                              
-                            {this.state.works_loaded && this.state.clients_loaded ?
+                            {this.state.works_loaded ?
                                 <div className="con"> 
 
                                    <div className="project_placeholder">
@@ -125,7 +114,7 @@ export default class About extends React.Component{
                                             <p><strong>Rivercode</strong> - Borås</p>
                                         </div>
                                         <div className="time">
-                                            <span>2018 - Now</span>
+                                            <span>2018 - 2019</span>
                                             <p><strong>Heroic</strong> - Stockholm</p>
                                         </div>
                                         <div className="time">
@@ -152,18 +141,6 @@ export default class About extends React.Component{
                                             : 'Instagram images loading'
                                         }                                
                                     </div>
-
-                                    <div className="partners">
-                                        <h1>Partners.</h1>
-                                        <div className="wrapper">
-                                            {this.state.clients.map((element,index) => 
-                                                    <div key={index} className="column">
-                                                        <img src={element.thumb_full_url} alt={element.slug} />
-                                                    </div>
-                                                )
-                                            }                                        
-                                        </div>
-                                    </div> 
 
                                     <div className="github">
                                         <h1>Github</h1>

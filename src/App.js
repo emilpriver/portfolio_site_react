@@ -8,6 +8,9 @@ import Single_project from './components/single_work'
 import error from './components/error'
 //react transitions
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import ReactGA from 'react-ga'
+
+ReactGA.initialize('UA-72822877-6');
 
 const App = ({ location }) => {
   //variables
