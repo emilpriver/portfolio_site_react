@@ -5,7 +5,7 @@ body
     background: #1c1c1c
     position: relative
 
-$font:  'Roboto', sans-serif
+$font: 'Montserrat', sans-serif
 
 $raleway: 'Raleway', sans-serif
     
@@ -154,7 +154,7 @@ header
                     margin-right: 10px
                     a 
                         text-decoration: none 
-                        font-weight: 400
+                        font-weight: 500
                         font-family: $font
                         font-size: 18px
                         color: #fff
@@ -334,12 +334,12 @@ header
         +container(1600px)
 
         h2
-            font-size: 30px
+            font-size: 60px
             font-family: $font
             font-weight: 500
             color: #000
             margin-top: 0px
-            margin-bottom: 50px
+            margin-bottom: 150px
 
         .projects
             width: 100%
@@ -352,23 +352,13 @@ header
             .project
                 position: relative
                 width: 100%
-                margin-bottom: 50px
+                margin-bottom: 200px
                 float: left
                 box-sizing: border-box
                 transform: translateY(100px)
                 transition: all 0.3s
                 transition-timing-function: easeIn
                 opacity: 0
-                height: 800px
-                border-radius: 20px
-                overflow: hidden
-
-                &:hover 
-                    .project_image
-                        &::before
-                            opacity: 1
-                    .project_info
-                        opacity: 1
         
                 .project_image
                     width: 100%
@@ -378,19 +368,8 @@ header
                     height: 800px
                     overflow: hidden
                     box-shadow: 0px 3px 6px rgba(0,0,0,0.6)
-                    position: absolute
-
-                    &::before
-                        content: " "
-                        opacity: 0
-                        z-index: 2
-                        width: 100%
-                        transition: opacity 0.3s
-                        height: 100%
-                        position: absolute
-                        top: 0
-                        left: 0
-                        background: linear-gradient(rgba(255, 255, 255, 0) 0%, #132377 100%)
+                    position: relative
+                    border-radius: 20px
 
                     img
                         z-index: 1
@@ -406,15 +385,13 @@ header
 
                 .project_info
                     width: 100%
-                    float: left
                     z-index: 5
                     box-sizing: border-box
                     text-align: left
-                    position: absolute
-                    bottom: 50px
-                    left: 50px
-                    opacity: 0
+                    opacity: 1
                     transition: all 0.3s
+                    max-width: 1100px
+                    margin: 0px auto
                     a
                         text-decoration: none
                         text-align: left
@@ -423,15 +400,15 @@ header
                         width: 100%
                     span
                         margin: 0px
-                        color: #fff
-                        font-size: 15px
+                        color: #000
+                        font-size: 25px
                         font-family: $font
-                        font-weight: 400
+                        font-weight: 500
 
                     h2
                         margin: 0px
-                        color: #fff
-                        font-size: 30px
+                        color: #000
+                        font-size: 60px
                         font-family: $font
                         font-weight: 500
                         position: relative
@@ -439,10 +416,10 @@ header
 
                     .explore
                         font-size: 18px
-                        color: #fff
+                        color: #000
                         text-decoration: underline
                         font-family: $font
-                        font-weight: 700
+                        font-weight: 500
 //work page
 #works_page
     width: 100%
@@ -469,8 +446,8 @@ header
                 font-size: 80px
                 color: #000 
                 font-family: $font
-                font-weight: 400
-                margin-bottom: 0px
+                font-weight: 500
+                margin-bottom: 150px
                 
         .come-in
             opacity: 1 !important
@@ -485,6 +462,7 @@ header
             padding: 20px 20px 20px 0px
             position: relative
             box-sizing: border-box
+            margin-bottom: 50px
             &:nth-child(odd)
                 padding: 20px 0px 20px 20px
                 transition-delay: 0.1s
@@ -500,7 +478,6 @@ header
                 padding: 20px 0px
                 .project_info
                     left: 0px
-                    width: 100%
 
             &:nth-child(3n + 5)
                 flex: 1 0 33%
@@ -512,17 +489,10 @@ header
                 padding: 20px 0px 0px 20px
                 .project_info
                     left: 20px
-                    height: calc(100% - 40px)
 
             &:last-of-type
                 padding: 20px 0px
                 .project_info
-                    width: 100%
-            &:hover
-                .project_info
-                    opacity: 1
-                    .wrapper
-                        transform: translateY(0px)
                     
             .project_thumbnail
                 width: 100%
@@ -534,30 +504,15 @@ header
                 border-radius: 20px
 
             .project_info
-                opacity: 0
                 float: left
-                height: 150px
                 display: flex
                 justify-content: flex-start
                 transition: all 0.3s
                 align-items: flex-end
-                top: 20px
-                left: 0px
-                height: calc(100% - 40px)
                 width: calc(100% - 20px)
-                position: absolute
+                position: relative
                 border-radius: 20px
                 overflow: hidden
-
-                &::before
-                    content: " "
-                    position: absolute
-                    top: 0
-                    left: 0
-                    width: 100%
-                    height: 100%
-                    background: linear-gradient(rgba(255,255,255,0) 0%, #132377 100%)
-                    z-index: 2
 
                 .wrapper
                     width: 100%
@@ -571,18 +526,18 @@ header
 
                     h3 
                         width: 100%
-                        color: #fff 
+                        color: #000 
                         font-family: $font
-                        font-weight: 400
-                        font-size: 30px
+                        font-weight: 500
+                        font-size: 50px
                         margin-bottom: 10px
                     span 
                         width: 100%
                         font-size: 16px
-                        font-weight: 400
+                        font-weight: 500
                         font-family: $font
                         margin-top: 0px
-                        color: #b1aeae 
+                        color: #000 
 
 
 
@@ -832,32 +787,49 @@ header
     float: left
     text-align: center
     #work_hero
-        height: 900px
         width: 100%
         float: left
-        background-position: center center
-        background-size: cover
         position: relative
-        display: flex
-        justify-content: center
-        align-items: center
-        &::before
-            content: " "
-            position: absolute
-            top: 0
-            left: 0
+        padding-top: 200px
+        padding-bottom: 200px
+        background: #fff
+        .con
+            +container(1340px)
+            text-align: left
             width: 100%
-            height: 100%
-            background: linear-gradient(180deg, rgba(27, 27, 28,0), #1b1b1c)
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001c1b21",endColorstr="#1c1b21",GradientType=0)
-            z-index: 2
-        h1 
-            font-size: 70px
-            color: #fff 
-            font-family: $font
-            z-index: 10            
-            font-weight: 400
 
+            h1 
+                font-size: 100px
+                color: #000 
+                font-family: $font
+                z-index: 10            
+                font-weight: 500
+                margin-bottom: 0px
+
+            .small_content
+                max-width: 900px
+                width: 100%
+                float: left
+                margin-bottom: 50px
+
+                * 
+                    line-height: 50px
+                    font-family: $font
+                    font-weight: 500
+                    color: #8e8a8a
+                    font-size: 25px
+                    strong 
+                        font-weight: 500
+                        color: #000
+            .links
+                width: 100%
+                float: left 
+                a
+                    color: #000
+                    font-family: $font
+                    font-weight: 500
+                    text-decoration: none
+                    font-size: 16px
     .spinner
         margin-top: 100px
         margin-bottom: 100px
@@ -873,21 +845,21 @@ header
             text-align: left
             .project_info
                 width: 100%
-                max-width: 1000px
-                margin-bottom: 200px
+                max-width: 1340px
+                margin-bottom: 50px
                 display: flex
                 flex-flow: wrap row
                 .col
                     flex: 1
+                    padding-right: 50px
                 .small
                     box-sizing: border-box
-                    flex: 0 0 30%
-                    padding-top: 5px
-                    text-align: right
+                    padding-left: 0px
+                    padding-left: 50px
                 h2 
-                    font-size: 50px
+                    font-size: 40px
                     font-family: $font
-                    font-weight: 400
+                    font-weight: 500
                     color: #000
                     margin-bottom: 0px
                     margin-top: 0px
@@ -897,38 +869,43 @@ header
                     margin-bottom: 20px
                     color: #000 
                     font-family: $font
-                    font-weight: 400
+                    font-weight: 500
 
                 .product_description
                     margin-bottom: 50px
                     *
                         font-size: 20px
-                        color: #8e8a8a 
+                        color: #000 
                         font-family: $font
-                        font-weight: 700
+                        font-weight: 500
+                        line-height: 40px
+
+                        strong 
+                            font-weight: 500
+                            color: #000
+                    p
+                        &:first-of-type
+                            margin-top: 0px
 
                 a 
                     color: #000
                     font-family: $font
                     font-weight: 500
                     text-decoration: none
+                    font-size: 20px
 
             .project_blocks
                 width: 100%
                 margin-top: 100px
                 float: left
 
-                .come-in
-                    opacity: 1 !important
-                    transform: translateY(0px) !important
-
                 .block
                     width: 100%
                     float: left
-                    opacity: 0
-                    transform: translateY(100px)
-                    transition: all 0.3s
-                    transition-timing-function: ease-in
+
+                    &:nth-child(even)
+                        .block_info
+                            float: left
 
                     .block_image
                         width: 100%
@@ -946,35 +923,46 @@ header
                         width: 100%
                         margin: 0px auto 100px auto
                         padding-bottom: 50px
+                        max-width: 700px
                         padding-top: 50px
-                        float: left
+                        float: right
                         .wrapper
                             max-width: 800px
                             text-align: left
                             float: left
                             margin: 0px auto
-                            font-family: $raleway
-                            font-weight: 700
-                            color: #767676
-                            font-size: 20px
+                            font-family: $font
+                            font-weight: 500
+                            color: #524e4e
+                            font-size: 25px
                         
                             *
-                                font-family: $raleway
+                                font-family: $font
+                                margin-bottom: 10px
+                                line-height: 50px
+
+                            strong 
+                                font-weight: 500
+                                color: #000
 
                             h1,h2,h3,h5,h6
                                 color: #000
                                 margin-top: 0px
-                                font-weight: 700
+                                margin-bottom: 30px
+                                font-weight: 500
                                 font-family: $font
                             span,p 
-                                font-size: 25px
-                            
-                            h1 
-                                font-size: 60px
-                            h2 
-                                font-size: 50px
-                            h3
+                                font-size: 18px
+
+                            h1
                                 font-size: 40px
+
+                            h2 
+                                font-size: 35px
+
+                            h3 
+                                font-size: 30px
+                        
 
 //footer
 
@@ -1017,7 +1005,7 @@ footer
                 color: #656464
                 font-family: $font
                 margin-bottom: 5px
-                font-weight: 700
+                font-weight: 500
                 text-align: left
                 margin-top: 0px
                 flex: 0 0 100%
@@ -1027,7 +1015,7 @@ footer
                 color: #fff
                 font-family: $font
                 flex: 0 0 100%
-                font-weight: 700
+                font-weight: 500
                 text-align: left
                 text-decoration: underline
         .socials
@@ -1215,9 +1203,10 @@ footer
                             opacity: 1
                     .project_info
                         opacity: 1
-                        .inner
-                            h1 
-                                font-size: 30px
+                        h2 
+                            font-size: 30px
+                        span 
+                            font-size: 15px
     #works_page
         .con
             .title
@@ -1255,6 +1244,10 @@ footer
                         padding: 0px
                         h3,span
                             color: #000
+                        h3 
+                            font-size: 30px
+                        span 
+                            font-size: 15px
 
     .hero
         height: 400px
@@ -1329,7 +1322,6 @@ footer
                     
     #single_work
         #work_hero
-            height: 500px
             h1
                 font-size: 30px
         #content

@@ -30,7 +30,6 @@ export default class Footer extends React.Component{
                         </a>
                     </div>
                 </div>
-                <a className="owl" href="http://www.freepik.com">Owl designed by Freepik</a>
             </footer>
         )
     }

@@ -1,7 +1,6 @@
 import React from 'react'
 import Menu from '../modules/menu'
 import Footer from '../modules/footer'
-import $ from 'jquery'
 //import jquery
 import ReactGA from 'react-ga'
 
@@ -37,57 +36,26 @@ export default class single_work extends React.Component{
                 }
             })
             .catch(err => {return window.location = '/404'})
-        //listen to scroll
-        window.addEventListener('scroll', this.onScroll);
     }
-
-    componentWillUnmount() {
-        //remove listener to scroll
-        window.removeEventListener('scroll', this.onScroll);
-    }
-
-    onScroll = (event) => {
-        var current = $('.block').first();
-        $.noConflict();
-        $(document).scroll(function () {
-            if (current.length) {
-                var y = window.scrollY - current.position().top
-                if (!$(current).is('.block:last')) {
-                    if (y > -500) {
-                        $(current).addClass('come-in')
-                        current = current.next('.block');
-                    }
-                } else {
-                    if (y > -500) {
-                        $(current).addClass('come-in')
-                    }
-                }
-            }
-        })
-    }
-    
     render(){
         let work = this.state.project
         return(            
             <div>
-            <Menu />
+            <Menu white_background={true} />
             <section id="single_work">
                 {this.state.project_loaded ? 
                     <div className="con">
-                        <div id="work_hero" style={{backgroundImage: `url(${work.thumb_full_url})`}}  >
-                            <h1>{work.title.rendered}</h1>
+                        <div id="work_hero">
+                            <div className="con">
+                                <h1>{work.title.rendered}</h1>
+                                <div className="small_content" dangerouslySetInnerHTML={{__html: work.content.rendered}}></div>
+                                <div className="links">
+                                    <a rel="noopener noreferrer" target="_blank" href={work.website_url}><i className="fas fa-link"></i> {work.website_url}</a>
+                                </div>
+                            </div>
                         </div>
                         <div id="content">
-                            <div className="con">
-                                <div className="project_info">
-                                    <div className="col">
-                                        <h2>{work.project_info}</h2>
-                                        <div className="product_description" dangerouslySetInnerHTML={{__html : work.content.rendered}}></div>
-                                    </div>
-                                    <div className="small">
-                                        <a rel="noopener noreferrer" target="_blank" href={work.website_url}><i class="fas fa-link"></i> {work.website_url}</a>
-                                    </div>
-                                </div>       
+                            <div className="con">    
                                 
                                 {(work.blocks && work.blocks.length > 0) ?
                                 <div className="project_blocks">
