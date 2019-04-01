@@ -63,32 +63,32 @@ export default class Menu extends React.Component{
                             </div>
                         </div>
                         <div className={'menu ' + (this.state.handle_menu_open_class ? 'open': '')}>
-                                <a rel="noopener noreferrer" href="https://twitter.com/emil_priver" target="_blank">
-                                    <i className="fab fa-twitter"></i>
-                                </a>
-                                <a rel="noopener noreferrer" href="https://facebook.com/emilpriver" target="_blank">
-                                    <i className="fab fa-facebook-f"></i>
-                                </a>
-                                <a rel="noopener noreferrer" href="https://www.instagram.com/emil_priver" target="_blank">
-                                    <i className="fab fa-instagram"></i>
-                                </a>
-                                <a rel="noopener noreferrer" href="https://github.com/emilpriver" target="_blank">
-                                    <i className="fab fa-github"></i>
-                                </a>
-                                <a  rel="noopener noreferrer" href="https://www.linkedin.com/in/emilpriver/" target="_blank">
-                                    <i className="fab fa-linkedin-in"></i>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <NavLink to="/" exact>Home.</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/missions" exact>Missions.</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/about" exact>About.</NavLink>
-                                    </li>
-                                </ul>
+                            <ul>
+                                <li>
+                                    <NavLink to="/" exact>Home.</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/missions" exact>Missions.</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/about" exact>About.</NavLink>
+                                </li>
+                            </ul>
+                            <a rel="noopener noreferrer" href="https://twitter.com/emil_priver" target="_blank">
+                                <i className="fab fa-twitter"></i>
+                            </a>
+                            <a rel="noopener noreferrer" href="https://facebook.com/emilpriver" target="_blank">
+                                <i className="fab fa-facebook-f"></i>
+                            </a>
+                            <a rel="noopener noreferrer" href="https://www.instagram.com/emil_priver" target="_blank">
+                                <i className="fab fa-instagram"></i>
+                            </a>
+                            <a rel="noopener noreferrer" href="https://github.com/emilpriver" target="_blank">
+                                <i className="fab fa-github"></i>
+                            </a>
+                            <a  rel="noopener noreferrer" href="https://www.linkedin.com/in/emilpriver/" target="_blank">
+                                <i className="fab fa-linkedin-in"></i>
+                            </a>
                         </div>
                     </div>
                 </header>
