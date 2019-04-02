@@ -126,8 +126,20 @@ header
                     margin-bottom: 2px
                     height: 2px
                     background: #fff
+                    transition: all 0.3s
+            .toggled
+                div 
+                    &:first-of-type
+                        transform: rotate(-38deg) translate(0px, 3px)
+
+                    &:nth-child(2)
+                        opacity: 0
+                    
+                    &:last-of-type
+                        transform: rotate(38deg) translate(-1px, -7px)
         .open
             max-height: 100em !important
+            padding-bottom: 20px
         .menu
             float: left
             transition: all 0.3s
@@ -1074,6 +1086,7 @@ footer
                 justify-content: flex-start
                 height: auto
                 flex-wrap: wrap
+
                 
                 a 
                     padding-left: 20px

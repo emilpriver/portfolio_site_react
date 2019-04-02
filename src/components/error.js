@@ -1,7 +1,6 @@
 import React from 'react'
 
 //modules
-import Menu from '../modules/menu'
 import Footer from '../modules/footer'
 
 
@@ -15,9 +14,9 @@ export default class About extends React.Component{
      render(){
           return(
             <div>
-               <Menu />
-                    <section id="error">
-                        <div className="con">
+                <section id="error">
+                    <div className="con content">
+                        <div className="content--inner">
                             <div className="col">
                                 <img src="/images/jackjack.png" alt="jack jack" />
                             </div>
@@ -30,7 +29,8 @@ export default class About extends React.Component{
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
+                </section>
                <Footer />
           </div>
             

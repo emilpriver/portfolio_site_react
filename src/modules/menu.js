@@ -56,7 +56,7 @@ export default class Menu extends React.Component{
                             </NavLink>
                         </div>
                         <div className="menu_con">
-                            <div className="wrapper" onClick={this.handle_menu_open}>
+                            <div className={'wrapper ' + (this.state.handle_menu_open_class ? 'toggled': '')} onClick={this.handle_menu_open}>
                                 <div></div>
                                 <div></div>
                                 <div></div>

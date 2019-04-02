@@ -1,4 +1,21 @@
 /* appear - on page load */
+@keyframes load_in {
+  from {
+    transform: translate3d(-100%)
+  }
+  to {
+    transform: translate3d(0%)
+  }
+}
+
+@keyframes exit {
+  from {
+    transform: translate3d(0%)
+  }
+  to {
+    transform: translate3d(-100%)
+  }
+}
 .transition-appear {
   opacity: 0;
   background: #fff;
@@ -12,28 +29,18 @@
 
 /* enter */
 .transition-enter {
-  opacity: 0;
-  background: #fff;
-  transition: opacity 0.8s ease-in-out;
-  z-index: 1;
+  transform: translate3d(-100%)
 }
 .transition-enter.transition-enter-active {
-  opacity: 1;
-  transition: opacity 0.8s ease-in-out;
+  animation: load_in 0.3s linear
 }
-
 /* exit */
 .transition-exit {
-  transition: opacity 0.8s ease-in-out;
-  opacity: 1;
+  animation: load_in 0.3s linear
 }
 .transition-exit.transition-exit-active {
-  transition: opacity 0.8s ease-in-out;
-  opacity: 0;
-  background: #fff;
+  animation: exit 0.3s linear
 }
 .transition-exit-done {
-  transition: opacity 0.8s ease-in-out;
-  opacity: 0;
-  background: #fff;
+  animation: exit 0.3s linear
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import $ from 'jquery';
 import ReactGA from 'react-ga'
 //modules
-import Nav from '../modules/menu'
 import Footer from '../modules/footer'
 import Hero from '../modules/hero'
 import Singleproject from '../modules/single_project'
@@ -66,12 +65,11 @@ export default class Home extends Component {
   render() {
     return (
         <div>
-            <Nav white_background={true}  />
             <Hero />
             <section id="works">
-                <div className="con">
+                <div className="con content">
                     <h2> Portfolio </h2>
-                    <div className="projects">
+                    <div className="projects content--inner">
                         {this.state.works_loaded ? 
                             this.state.works.map((data,key) => <Singleproject key={key} element={data} /> )
                         : <div className="spinner"><div></div></div>  }
