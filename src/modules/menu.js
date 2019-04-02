@@ -68,7 +68,7 @@ export default class Menu extends React.Component{
                                     <NavLink to="/" exact>Home.</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/missions" exact>Missions.</NavLink>
+                                    <NavLink to="/missions" exact>Portfolio.</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/about" exact>About.</NavLink>

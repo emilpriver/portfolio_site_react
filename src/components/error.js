@@ -7,6 +7,11 @@ import Footer from '../modules/footer'
 
 export default class About extends React.Component{
 
+    componentDidMount(){
+        //jump to top
+        window.scrollTo(0, 0)
+    }
+
      render(){
           return(
             <div>

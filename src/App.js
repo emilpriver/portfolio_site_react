@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {withRouter, Route , Switch} from 'react-router-dom';
 //components
 import Home from './components/home'
@@ -12,12 +12,23 @@ import ReactGA from 'react-ga'
 
 ReactGA.initialize('UA-72822877-6');
 
+class ScrollToTopOnMount extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return null;
+  }
+}
+
 const App = ({ location }) => {
   //variables
   const currentKey = location.pathname.split('/')[1] || '/'
   const timeout = { enter: 500, exit: 500 }
   return (
       <TransitionGroup component="main" className="page-main">
+        <ScrollToTopOnMount />
         <CSSTransition key={currentKey} unmountOnExit timeout={timeout} classNames="transition" appear>
           <Switch location={location}>
             <Route exact path="/" component={Home}  />

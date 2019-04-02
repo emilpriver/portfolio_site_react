@@ -1,8 +1,9 @@
 /* appear - on page load */
 .transition-appear {
-    opacity: 0;
-    z-index: 1;
-    transition: opacity 0.8s ease-in-out;
+  opacity: 0;
+  background: #fff;
+  z-index: 1;
+  transition: opacity 0.8s ease-in-out;
 }
 .transition-appear.transition-appear-active {
   opacity: 1;
@@ -12,24 +13,27 @@
 /* enter */
 .transition-enter {
   opacity: 0;
+  background: #fff;
   transition: opacity 0.8s ease-in-out;
   z-index: 1;
 }
 .transition-enter.transition-enter-active {
-    opacity: 1;
-    transition: opacity 0.8s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
 }
 
 /* exit */
 .transition-exit {
-    transition: opacity 0.8s ease-in-out;
-    opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+  opacity: 1;
 }
 .transition-exit.transition-exit-active {
-    transition: opacity 0.8s ease-in-out;
-    opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  opacity: 0;
+  background: #fff;
 }
 .transition-exit-done {
-    transition: opacity 0.8s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
   opacity: 0;
+  background: #fff;
 }

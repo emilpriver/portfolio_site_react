@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import $ from 'jquery';
 import ReactGA from 'react-ga'
-import { Link } from 'react-router-dom'
 //modules
 import Nav from '../modules/menu'
+import Singleproject from '../modules/single_project'
 import Footer from '../modules/footer'
 
 export default class Home extends Component {
@@ -63,27 +63,15 @@ export default class Home extends Component {
     return (
         <div>
             <Nav white_background={true} />
-            <section id="works_page">
+            <section id="works" className="works_page">
                 <div className="con">
-                    <div className="title">
-                        <h1>All missions.</h1>
+                    <h2> Portfolio </h2>
+                    <div className="projects">
+                        {this.state.works_loaded ? 
+                        //map the works
+                        this.state.works.map((element,index) => <Singleproject key={index} element={element} />)
+                        : <div className="spinner"><div></div></div>}
                     </div>
-                    {this.state.works_loaded ? 
-                    //map the works
-                    this.state.works.map((element,index) => 
-                        <div key={index} className="project">
-                            <Link to={'/works/' + element.slug}><div className="project_thumbnail" style={{backgroundImage: `url(${element.thumb_full_url})`}}></div></Link>
-                            <Link to={'/works/' + element.slug}>
-                                <div className="project_info">
-                                    <div className="wrapper">
-                                        <h3>{element.title.rendered}</h3>
-                                        <span>{element.project_info}</span>
-                                    </div>
-                                </div> 
-                            </Link>
-                        </div>
-                    )
-                    : <div className="spinner"><div></div></div>}
                 </div>
             </section>
             <Footer />
