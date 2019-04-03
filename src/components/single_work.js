@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from '../modules/footer'
 //import jquery
 import ReactGA from 'react-ga'
 
@@ -74,7 +73,6 @@ export default class single_work extends React.Component{
                     </section>
                 </div>
             </div>
-        <Footer />
         </div>
             
         )

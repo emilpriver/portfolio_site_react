@@ -1,9 +1,5 @@
 import React from 'react'
 
-//modules
-import Footer from '../modules/footer'
-
-
 export default class About extends React.Component{
 
     componentDidMount(){
@@ -33,7 +29,6 @@ export default class About extends React.Component{
                         </section>
                         </div>
                     </div>
-               <Footer />
           </div>
             
         )

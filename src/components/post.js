@@ -1,9 +1,5 @@
 import React from 'react'
 
-//modules
-import Footer from '../modules/footer'
-
-
 export default class Pos extends React.Component{
 
      render(){
@@ -17,7 +13,6 @@ export default class Pos extends React.Component{
                         
                     </div>
                 </section>
-               <Footer />
           </div>
             
         )

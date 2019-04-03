@@ -2,18 +2,44 @@ import React, {Component} from 'react';
 import { Route , Switch,BrowserRouter} from 'react-router-dom';
 //components
 import Home from './components/home'
+import Footer from './modules/footer'
 import Missions from './components/missions'
 import About from './components/about'
 import Single_project from './components/single_work'
 import error from './components/error'
 import Menu from './modules/menu'
-import { play, exit } from './timelines'
-
+import { TweenLite } from "gsap"
 //react transitions
 import { Transition, TransitionGroup } from 'react-transition-group'
 import ReactGA from 'react-ga'
 
 ReactGA.initialize('UA-72822877-6');
+
+//GSAP
+const play = node => {
+  TweenLite.set(node, {
+    x: "100%",
+    opacity: 0,
+    scale: .7
+  });
+  TweenLite.to(node, .5, {
+    x: "0%",
+    opacity: 1,
+    scale: 1
+  });
+}
+const exit = node => {
+  TweenLite.set(node, {
+    x: "0%",
+    opacity: 1,
+    scale: 1
+  });
+  TweenLite.to(node, .5, {
+    x: "-100%",
+    opacity: 0,
+    scale: .7
+  });
+}       
 
 class App extends Component {
   //variables
@@ -23,15 +49,16 @@ class App extends Component {
         <main role="document">
           <Menu white_background={true} />
           <Route render={({ location }) => {
-            const { pathname, key } = location;
+            const { key } = location;
             return (
                 <TransitionGroup component={null}>
                   <Transition 
                     key={key}
-                    appear={true}
-                    onEnter={(node, appears) => play(pathname, node, appears)}
-                    onExit={(node, appears) => exit(node, appears)}
-                    timeout={{enter: 750, exit: 150}}
+                    mountOnEnter={true}
+                    unmountOnExi={true}
+                    onEnter={play}
+                    onExit={exit}
+                    timeout={1500}
                   >
                     <Switch location={location}>
                       <Route exact path="/" component={Home}  />
@@ -44,6 +71,7 @@ class App extends Component {
                 </TransitionGroup>
             ); 
           }}/>
+          <Footer />
         </main>
       </BrowserRouter>
     )
