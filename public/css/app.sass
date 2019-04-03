@@ -2,8 +2,9 @@ body
     margin: 0px
     padding: 0px
     overflow-x: hidden
-    background: #1c1c1c
+    background: #fff
     position: relative
+    overflow-y: scroll
 
 $font:-apple-system,system-ui,BlinkMacSystemFont, 'Source Sans Pro', sans-serif
 
@@ -21,7 +22,7 @@ $raleway: 'Raleway', sans-serif
         opacity: 0
     100%
         opacity: 1
-      
+
 //router transition
 
 //spinner
@@ -89,7 +90,7 @@ header
     transition: all 0.3s
 
     .con
-        max-width: 1200px
+        +container(1200px)
         margin: 0px auto
         box-sizing: border-box
         .headerlogo
@@ -126,8 +127,20 @@ header
                     margin-bottom: 2px
                     height: 2px
                     background: #fff
+                    transition: all 0.3s
+            .toggled
+                div 
+                    &:first-of-type
+                        transform: rotate(-38deg) translate(0px, 3px)
+
+                    &:nth-child(2)
+                        opacity: 0
+                    
+                    &:last-of-type
+                        transform: rotate(38deg) translate(-1px, -7px)
         .open
             max-height: 100em !important
+            padding-bottom: 20px
         .menu
             float: left
             transition: all 0.3s
@@ -269,7 +282,6 @@ header
             top: 50%
             left: 50%
             z-index: 2
-
             .wrapper
                 max-width: 1600px
                 margin: 0px auto
@@ -708,7 +720,7 @@ header
         padding-bottom: 200px
         background: #fff
         .con
-            +container(1340px)
+            +container(1200px)
             text-align: left
             width: 100%
 
@@ -755,7 +767,7 @@ header
         box-sizing: border-box
         padding-bottom: 100px
         .con
-            +container(1340px)
+            +container(1200px)
             text-align: left
             .project_info
                 width: 100%
@@ -973,14 +985,14 @@ footer
 
                 h1 
                     font-size: 50px
-                    color: #fff 
+                    color: #000 
                     font-family: $font
                     font-weight: 700
                     margin-bottom: 40px
 
                 span 
                     font-size: 17px
-                    color: #fff 
+                    color: #000 
                     font-family: $font
                     width: 100%
                     float: left
@@ -1074,6 +1086,7 @@ footer
                 justify-content: flex-start
                 height: auto
                 flex-wrap: wrap
+
                 
                 a 
                     padding-left: 20px
