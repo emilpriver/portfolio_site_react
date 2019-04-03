@@ -8,7 +8,8 @@ export default class Menu extends React.Component{
                     <div className="text"> 
                        <div className="wrapper">
                             <h1>
-                                I'm Emil, A developer from Borås,Sweden.
+                                Hello, I'm Emil.<br />
+                                Borås, Sweden based developer
                             </h1>
                        </div>
                     </div>  

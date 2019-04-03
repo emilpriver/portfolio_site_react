@@ -2,8 +2,9 @@ body
     margin: 0px
     padding: 0px
     overflow-x: hidden
-    background: #1c1c1c
+    background: #fff
     position: relative
+    overflow-y: scroll
 
 $font:-apple-system,system-ui,BlinkMacSystemFont, 'Source Sans Pro', sans-serif
 
@@ -21,7 +22,7 @@ $raleway: 'Raleway', sans-serif
         opacity: 0
     100%
         opacity: 1
-      
+
 //router transition
 
 //spinner
@@ -89,8 +90,9 @@ header
     transition: all 0.3s
 
     .con
-        max-width: 1600px
+        +container(1200px)
         margin: 0px auto
+        box-sizing: border-box
         .headerlogo
             float: left
             height: 80px
@@ -125,8 +127,20 @@ header
                     margin-bottom: 2px
                     height: 2px
                     background: #fff
+                    transition: all 0.3s
+            .toggled
+                div 
+                    &:first-of-type
+                        transform: rotate(-38deg) translate(0px, 3px)
+
+                    &:nth-child(2)
+                        opacity: 0
+                    
+                    &:last-of-type
+                        transform: rotate(38deg) translate(-1px, -7px)
         .open
             max-height: 100em !important
+            padding-bottom: 20px
         .menu
             float: left
             transition: all 0.3s
@@ -232,13 +246,13 @@ header
     position: relative
     z-index: 1
     overflow: hidden
+    display: flex
+    justify-content: center
+    align-items: center
 
     .con
         position: absolute
-        top: 50%
-        left: 0
-        transform: translateY(-50%)
-        z-index: 1
+        max-width: 1200px
         width: 100%
 
         .image
@@ -268,13 +282,12 @@ header
             top: 50%
             left: 50%
             z-index: 2
-
             .wrapper
                 max-width: 1600px
                 margin: 0px auto
 
                 h1
-                    font-size: 120px
+                    font-size: 60px
                     font-family: $font
                     font-weight: 700
                     margin-top: 0px
@@ -351,15 +364,16 @@ header
     padding-top: 10px
 
     .con
-        +container(1600px)
+        +container(1200px)
+        overflow: hidden
 
         h2
-            font-size: 60px
+            font-size: 50px
             font-family: $font
             font-weight: 500
             color: #000
             margin-top: 0px
-            margin-bottom: 150px
+            margin-bottom: 10px
 
         .projects
             width: 100%
@@ -367,29 +381,38 @@ header
             text-align: center
 
             .come-in
-                transform: translateY(0px) !important
                 opacity: 1 !important
+
             .project
                 position: relative
-                width: 100%
-                margin-bottom: 200px
+                width: 50%
+                margin-bottom: 100px
                 float: left
                 box-sizing: border-box
                 transform: translateY(100px)
                 transition: all 0.3s
                 transition-timing-function: easeIn
-                opacity: 0
+                opacity: 0.4
+                padding: 20px
+
+                &:nth-child(even)
+                    padding-right: 0px
+                &:nth-child(odd)
+                    padding-left: 0px
         
                 .project_image
                     width: 100%
-                    float: left
+                    float: right
                     margin-bottom: 40px
                     z-index: 1
-                    height: 800px
+                    height: 500px
                     overflow: hidden
                     box-shadow: 0px 3px 6px rgba(0,0,0,0.6)
                     position: relative
-                    border-radius: 20px
+                    background: rgba(18,7,7,0)
+                    transition: all 0.3s
+                    &:hover
+                        opacity: 0.8
 
                     img
                         z-index: 1
@@ -410,25 +433,27 @@ header
                     text-align: left
                     opacity: 1
                     transition: all 0.3s
-                    max-width: 1100px
-                    margin: 0px auto
+
                     a
                         text-decoration: none
                         text-align: left
                         float: left
                         margin-right: 20px
                         width: 100%
+                        mix-blend-mode: difference
                     span
                         margin: 0px
-                        color: #000
-                        font-size: 25px
+                        font-size: 17px
                         font-family: $font
                         font-weight: 500
+                        color: black
+                        mix-blend-mode: difference
 
                     h2
                         margin: 0px
-                        color: #000
-                        font-size: 60px
+                        color: black
+                        mix-blend-mode: difference
+                        font-size: 25px
                         font-family: $font
                         font-weight: 500
                         position: relative
@@ -440,125 +465,8 @@ header
                         text-decoration: underline
                         font-family: $font
                         font-weight: 500
-//work page
-#works_page
-    width: 100%
-    float: left
-    padding-top: 150px
-    padding-bottom: 50px
-    min-height: 900px
-    background: #fff
-    .con 
-        max-width: 1600px
-        margin: 0px auto
-        box-sizing: border-box
-        padding-left: 10px
-        padding-right: 10px
-        text-align: center
-        display: flex
-        flex-flow: row wrap
-        .title
-            width: 100%
-            text-align: left
-            float: left
-
-            h1 
-                font-size: 80px
-                color: #000 
-                font-family: $font
-                font-weight: 500
-                margin-bottom: 150px
-                
-        .come-in
-            opacity: 1 !important
-            transform: translateY(0px) !important
-        
-        .project
-            opacity: 0
-            transform: translateY(100px)
-            transition: all 0.3s
-            flex: 1 0 50%
-            float: left
-            padding: 20px 20px 20px 0px
-            position: relative
-            box-sizing: border-box
-            margin-bottom: 50px
-            &:nth-child(odd)
-                padding: 20px 0px 20px 20px
-                transition-delay: 0.1s
-                .project_info
-                    top: 20px
-                    left: 20px
-            &:nth-child(2), &:nth-child(3)
-                opacity: 1 !important
-                transform: translateY(0px) !important
-
-            &:nth-child(3n + 4)
-                flex: 1 0 100%
-                padding: 20px 0px
-                .project_info
-                    left: 0px
-
-            &:nth-child(3n + 5)
-                flex: 1 0 33%
-                padding: 20px 20px 20px 0px
-                .project_info
-                    left: 0px
-            &:nth-child(3n + 6)
-                flex: 1 0 67%
-                padding: 20px 0px 0px 20px
-                .project_info
-                    left: 20px
-
-            &:last-of-type
-                padding: 20px 0px
-                .project_info
-                    
-            .project_thumbnail
-                width: 100%
-                float: left
-                height: 500px
-                background-position: center center
-                background-size: cover 
-                box-shadow: 0px 3px 6px rgba(0,0,0,0.20)
-                border-radius: 20px
-
-            .project_info
-                float: left
-                display: flex
-                justify-content: flex-start
-                transition: all 0.3s
-                align-items: flex-end
-                width: calc(100% - 20px)
-                position: relative
-
-                .wrapper
-                    width: 100%
-                    text-align: left
-                    transition: all 0.3s
-                    transform: translateY(30px)
-                    padding-bottom: 40px
-                    padding-left: 40px
-                    box-sizing: border-box
-                    z-index: 3
-
-                    h3 
-                        width: 100%
-                        color: #000 
-                        font-family: $font
-                        font-weight: 500
-                        font-size: 50px
-                        margin-bottom: 10px
-                    span 
-                        width: 100%
-                        font-size: 16px
-                        font-weight: 500
-                        font-family: $font
-                        margin-top: 0px
-                        color: #000 
-
-
-
+.works_page
+    padding-top: 150px !important
 //about
 #about 
     width: 100%
@@ -812,7 +720,7 @@ header
         padding-bottom: 200px
         background: #fff
         .con
-            +container(1340px)
+            +container(1200px)
             text-align: left
             width: 100%
 
@@ -859,7 +767,7 @@ header
         box-sizing: border-box
         padding-bottom: 100px
         .con
-            +container(1340px)
+            +container(1200px)
             text-align: left
             .project_info
                 width: 100%
@@ -1001,7 +909,7 @@ footer
         text-align: center
         text-decoration: none
     .inner
-        +container(1340px)
+        +container(1200px)
         width: 100%
         height: 100px
         display: flex 
@@ -1047,7 +955,48 @@ footer
                 transition: all 0.3s
                 &:hover
                     color: #fff 
+#error
+    width: 100%
+    float: left
+    height: 85vh
+    display: flex
+    justify-content: center
+    align-items: center
+    .con
+        +container(1200px)
+        display: flex
+        flex-flow: wrap row
+        width: 100%
+        .col
+            flex: 1
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            img 
+                max-width: 100%
+                width: auto 
+                height: auto
+                display: block
+                max-height: 100%
 
+            .wrapper
+                width: 100%
+                float: left
+
+                h1 
+                    font-size: 50px
+                    color: #000 
+                    font-family: $font
+                    font-weight: 700
+                    margin-bottom: 40px
+
+                span 
+                    font-size: 17px
+                    color: #000 
+                    font-family: $font
+                    width: 100%
+                    float: left
+                    margin-bottom: 20px
 
 //for mobile
 @media screen and (max-width: 1300px)
@@ -1137,6 +1086,7 @@ footer
                 justify-content: flex-start
                 height: auto
                 flex-wrap: wrap
+
                 
                 a 
                     padding-left: 20px
@@ -1153,48 +1103,6 @@ footer
                         flex: 0 0 100%
                         margin-bottom: 20px
                         text-align: left
-#error
-    width: 100%
-    float: left
-    height: 85vh
-    display: flex
-    justify-content: center
-    align-items: center
-    .con
-        +container(1200px)
-        display: flex
-        flex-flow: wrap row
-        width: 100%
-        .col
-            flex: 1
-            display: flex
-            justify-content: flex-start
-            align-items: center
-            img 
-                max-width: 100%
-                width: auto 
-                height: auto
-                display: block
-                max-height: 100%
-
-            .wrapper
-                width: 100%
-                float: left
-
-                h1 
-                    font-size: 50px
-                    color: #fff 
-                    font-family: $font
-                    font-weight: 700
-                    margin-bottom: 40px
-
-                span 
-                    font-size: 17px
-                    color: #fff 
-                    font-family: $font
-                    width: 100%
-                    float: left
-                    margin-bottom: 20px
 
 @media screen and (max-width: 900px)
     #about
@@ -1217,27 +1125,23 @@ footer
                 .wrapper
                     h1
                         font-size: 60px
+    
+    #works
+        .con
+            .projects
+                .project
+                    .project_image
+                        height: 300px
 
 @media screen and (max-width: 700px)
     #works
         .con
-            h1 
-                font-size: 30px
-
-            h2 
-                font-size: 20px
             .projects
                 .project
+                    padding: 0px !important
+                    width: 100%
                     .project_image
-                        height: 400px
-                        &::before
-                            opacity: 1
-                    .project_info
-                        opacity: 1
-                        h2 
-                            font-size: 30px
-                        span 
-                            font-size: 15px
+                        height: 300px
     #works_page
         .con
             .title
