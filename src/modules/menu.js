@@ -65,10 +65,7 @@ export default class Menu extends React.Component{
                         <div className={'menu ' + (this.state.handle_menu_open_class ? 'open': '')}>
                             <ul>
                                 <li>
-                                    <NavLink to="/" exact>Home.</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/missions" exact>Portfolio.</NavLink>
+                                    <NavLink to="/" exact>Portfolio.</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/about" exact>About.</NavLink>

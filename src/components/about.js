@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import ReactGA from 'react-ga';
 import axios from 'axios'
 import moment from 'moment'
@@ -99,9 +99,9 @@ export default class About extends React.Component{
 
                                         <div className="project_placeholder">
                                             {this.state.works.map((element,index) => 
-                                                <Link key={index} to={'/works/' + element.slug}>
+                                                <NavLink key={index} to={'/works/' + element.slug}>
                                                     <div className="column" style={{backgroundImage: `url(${element.thumb_full_url})`}} />
-                                                </Link>
+                                                </NavLink>
                                             )}
                                         
                                         </div>

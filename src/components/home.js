@@ -19,7 +19,7 @@ export default class Home extends Component {
         //jump to top
         window.scrollTo(0, 0)
         //fetch data
-        fetch('https://cdn.emilpriver.com/wp-json/wp/v2/works/?per_page=4')
+        fetch('https://cdn.emilpriver.com/wp-json/wp/v2/works/')
         .then(async (response) => {return await response.json()})
         .then(works => {
             setTimeout(() => {
@@ -64,18 +64,20 @@ export default class Home extends Component {
 
   render() {
     return (
-        <div>
+        <div className="content">
             <Hero />
-            <section id="works">
-                <div className="con content">
-                    <h2> Portfolio </h2>
-                    <div className="projects content--inner">
-                        {this.state.works_loaded ? 
-                            this.state.works.map((data,key) => <Singleproject key={key} element={data} /> )
-                        : <div className="spinner"><div></div></div>  }
+            <div className="content--inner">
+                <section id="works">
+                    <div className="con">
+                        <h2> Portfolio </h2>
+                        <div className="projects">
+                            {this.state.works_loaded ? 
+                                this.state.works.map((data,key) => <Singleproject key={key} element={data} /> )
+                            : <div className="spinner"><div></div></div>  }
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
             <Footer />
         </div>
     );
