@@ -32,12 +32,19 @@ export default class Menu extends React.Component{
             })
         }
     }
+
     handle_menu_open = () => {
         this.setState(prevState => ({
             handle_menu_open_class: !prevState.handle_menu_open_class
         }))
     }
 
+    close_nav = () => {
+        this.setState({
+            handle_menu_open_class: false
+        })
+    }
+    
     render() {
         return (
                 <header className={(this.state.header_menu_scrolled ? 'scrolled' : '' ) + (this.state.white_background ? ' white_background' : '')}>
@@ -65,10 +72,10 @@ export default class Menu extends React.Component{
                         <div className={'menu ' + (this.state.handle_menu_open_class ? 'open': '')}>
                             <ul>
                                 <li>
-                                    <NavLink to="/" exact>Portfolio.</NavLink>
+                                    <NavLink to="/" onClick={this.close_nav} exact>Portfolio.</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/about" exact>About.</NavLink>
+                                    <NavLink to="/about" onClick={this.close_nav} exact>About.</NavLink>
                                 </li>
                             </ul>
                             <a rel="noopener noreferrer" href="https://twitter.com/emil_priver" target="_blank">
