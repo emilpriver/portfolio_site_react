@@ -4,8 +4,7 @@ import ReactGA from 'react-ga';
 import axios from 'axios'
 import moment from 'moment'
 import jsonAdapter from 'axios-jsonp'
-//modules
-import Footer from '../modules/footer'
+
 
 
 export default class About extends React.Component{
@@ -173,7 +172,6 @@ export default class About extends React.Component{
                                             
                         </div>
                 </section>
-               <Footer />
           </div>
             
         )

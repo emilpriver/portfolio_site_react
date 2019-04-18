@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import $ from 'jquery';
 import ReactGA from 'react-ga'
+
 //modules
-import Footer from '../modules/footer'
 import Hero from '../modules/hero'
 import Singleproject from '../modules/single_project'
 
@@ -78,7 +78,6 @@ export default class Home extends Component {
                     </div>
                 </section>
             </div>
-            <Footer />
         </div>
     );
   }

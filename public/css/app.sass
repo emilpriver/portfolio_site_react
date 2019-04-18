@@ -894,8 +894,61 @@ header
                             h3 
                                 font-size: 30px
                         
+#single_article 
+    width: 100%
+    float: left
 
-//footer
+    article
+        width: 100%
+        float: left
+
+        .article
+            margin-top: 80px
+            &-hero 
+                height: 800px
+                width: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                background-size: cover
+                background-position: center center
+
+                h1
+                    font-size: 60px
+                    color: #fff
+                    font-family: $font
+                    font-weight: 700
+
+            &-content 
+                padding-top: 50px
+                padding-bottom: 50px
+
+                .con
+                    max-width: 800px
+                    margin: 0px auto
+
+                    *
+                        font-family: $font
+                        font-weight: inherit
+                        color: #676060
+                        max-width: 100%
+                        line-height: 1.8
+
+                    h1,h2,h3,h4,h5,h6
+                        color: #000
+                        text-transform: uppercase
+                        font-weight: 700
+
+                    h1 
+                        font-size: 30px
+                        
+                    h2 
+                        font-size: 27px
+                    
+                    h3 
+                        font-size: 25px
+
+//footer            
 
 footer 
     width: 100%

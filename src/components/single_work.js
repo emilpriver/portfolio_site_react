@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from '../modules/footer'
 //import jquery
 import ReactGA from 'react-ga'
 
@@ -10,7 +9,7 @@ export default class single_work extends React.Component{
         super(props)
         this.state = {
             project: '',
-            project_loaded: false
+            project_loaded: false,
         }
     }
 
@@ -34,6 +33,7 @@ export default class single_work extends React.Component{
                 }
             })
             .catch(err => {return window.location = '/404'})
+            
     }
     render(){
         let work = this.state.project
@@ -74,7 +74,6 @@ export default class single_work extends React.Component{
                     </section>
                 </div>
             </div>
-        <Footer />
         </div>
             
         )

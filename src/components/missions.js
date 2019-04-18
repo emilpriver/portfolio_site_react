@@ -3,7 +3,6 @@ import $ from 'jquery';
 import ReactGA from 'react-ga'
 //modules
 import Singleproject from '../modules/single_project'
-import Footer from '../modules/footer'
 
 export default class Home extends Component {
 
@@ -72,7 +71,6 @@ export default class Home extends Component {
                     </div>
                 </div>
             </section>
-            <Footer />
         </div>
     );
   }
