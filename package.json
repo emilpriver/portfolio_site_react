@@ -5,9 +5,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "axios-jsonp": "^1.0.2",
+    "global": "^4.3.2",
     "gsap": "^2.1.2",
     "jquery": "^3.3.1",
     "moment": "^2.24.0",
+    "netlify-cli": "^2.11.10",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-ga": "^2.5.6",
