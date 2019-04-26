@@ -6,7 +6,9 @@ import Missions from './components/missions'
 import About from './components/about'
 import Single_project from './components/single_work'
 import error from './components/error'
+import article from './components/single_article'
 import Menu from './modules/menu'
+import Footer from './modules/footer'
 import { play, exit } from './timelines'
 
 //react transitions
@@ -36,14 +38,16 @@ class App extends Component {
                     <Switch location={location}>
                       <Route exact path="/" component={Home}  />
                       <Route exact path="/missions" component={Missions}  />
-                      <Route path="/about" component={About}  />
+                      <Route exact path="/about" component={About}  />
                       <Route path="/works/:slug" component={Single_project}  />
+                      <Route path="/article/:slug" component={article}  />
                       <Route component={error} />
                     </Switch>
                   </Transition>
                 </TransitionGroup>
             ); 
           }}/>
+        <Footer />
         </main>
       </BrowserRouter>
     )

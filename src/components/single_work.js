@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from '../modules/footer'
 //import jquery
 import ReactGA from 'react-ga'
 
@@ -10,7 +9,7 @@ export default class single_work extends React.Component{
         super(props)
         this.state = {
             project: '',
-            project_loaded: false
+            project_loaded: false,
         }
     }
 
@@ -21,7 +20,7 @@ export default class single_work extends React.Component{
         ReactGA.pageview(window.location.pathname + window.location.search);
         //fetch data
         const { slug } = this.props.match.params
-        await fetch('https://cdn.emilpriver.com/wp-json/wp/v2/works?slug=' + slug)
+        await fetch('https://api.emilpriver.com/wp-json/wp/v2/works?slug=' + slug)
             .then(async response => await response.json())
             .then(response => {
                 if(response.length){
@@ -34,6 +33,7 @@ export default class single_work extends React.Component{
                 }
             })
             .catch(err => {return window.location = '/404'})
+            
     }
     render(){
         let work = this.state.project
@@ -74,7 +74,6 @@ export default class single_work extends React.Component{
                     </section>
                 </div>
             </div>
-        <Footer />
         </div>
             
         )

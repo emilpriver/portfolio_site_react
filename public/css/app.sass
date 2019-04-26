@@ -1,3 +1,5 @@
+// stylelint-disable
+    
 body
     margin: 0px
     padding: 0px
@@ -41,7 +43,7 @@ $raleway: 'Raleway', sans-serif
     position: absolute
     width: 26px
     height: 26px
-    background: #8e0e16
+    background: #477729
     animation: spinner 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1)
 
 .spinner div:after,
@@ -51,7 +53,7 @@ $raleway: 'Raleway', sans-serif
     display: block
     width: 26px
     height: 26px
-    background: #8e0e16
+    background: #477729
 
 .spinner div:before 
     left: -17px
@@ -242,7 +244,7 @@ header
 .hero
     width: 100%
     height: 700px
-    background: #fff
+    background-image: linear-gradient(135deg, #477729 0%, #1b9c12 100%)
     position: relative
     z-index: 1
     overflow: hidden
@@ -292,12 +294,12 @@ header
                     font-weight: 700
                     margin-top: 0px
                     margin-bottom: 0px
-                    color: #1a1a1a
+                    color: #fff
                     width: 100%
                     text-transform: uppercase
                     text-align: left
                     * 
-                        color: #1a1a1a
+                        color: #fff
 
                 span 
                     font-size: 20px
@@ -361,7 +363,7 @@ header
     float: left
     padding-bottom: 50px
     background: #fff
-    padding-top: 10px
+    padding-top: 100px
 
     .con
         +container(1200px)
@@ -411,6 +413,8 @@ header
                     position: relative
                     background: rgba(18,7,7,0)
                     transition: all 0.3s
+                    background-position: center center
+                    background-size: cover
                     &:hover
                         opacity: 0.8
 
@@ -425,6 +429,7 @@ header
                         width: auto
                         min-width: 100%
                         display: block
+                        max-height: 800px
 
                 .project_info
                     width: 100%
@@ -889,8 +894,61 @@ header
                             h3 
                                 font-size: 30px
                         
+#single_article 
+    width: 100%
+    float: left
 
-//footer
+    article
+        width: 100%
+        float: left
+
+        .article
+            margin-top: 80px
+            &-hero 
+                height: 800px
+                width: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                background-size: cover
+                background-position: center center
+
+                h1
+                    font-size: 60px
+                    color: #fff
+                    font-family: $font
+                    font-weight: 700
+
+            &-content 
+                padding-top: 50px
+                padding-bottom: 50px
+
+                .con
+                    max-width: 800px
+                    margin: 0px auto
+
+                    *
+                        font-family: $font
+                        font-weight: inherit
+                        color: #676060
+                        max-width: 100%
+                        line-height: 1.8
+
+                    h1,h2,h3,h4,h5,h6
+                        color: #000
+                        text-transform: uppercase
+                        font-weight: 700
+
+                    h1 
+                        font-size: 30px
+                        
+                    h2 
+                        font-size: 27px
+                    
+                    h3 
+                        font-size: 25px
+
+//footer            
 
 footer 
     width: 100%
