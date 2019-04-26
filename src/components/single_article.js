@@ -19,7 +19,7 @@ export default class article extends React.Component{
         //setup  Analytics
         ReactGA.pageview(window.location.pathname + window.location.search);
         const { slug } = this.props.match.params
-        await fetch('https://cdn.emilpriver.com/wp-json/wp/v2/posts/?slug=' + slug)
+        await fetch('https://api.emilpriver.com/wp-json/wp/v2/posts/?slug=' + slug)
             .then(async response => await response.json())
             .then(response => {
                 if(response.length){

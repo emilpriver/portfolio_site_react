@@ -43,7 +43,7 @@ export default class About extends React.Component{
         })
         .catch(err => console.log(err))        
         //fetch works
-        fetch('https://cdn.emilpriver.com/wp-json/wp/v2/works?per_page=3')
+        fetch('https://api.emilpriver.com/wp-json/wp/v2/works?per_page=3')
         .then(response =>  response.json())
         .then(works => {
             this.setState({
