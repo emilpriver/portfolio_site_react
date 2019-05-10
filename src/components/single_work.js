@@ -60,8 +60,12 @@ export default class single_work extends React.Component{
                                             <div className="project_blocks">
                                                 {work.blocks.map((element,index) => 
                                                     <div className="block" key={index} >
-                                                        <div className="fade_in_block block_image"><img src={element.blocksimage} alt={work.title.rendered} /></div>
-                                                        <div className="fade_in_block block_info"><div className="wrapper"><span dangerouslySetInnerHTML={{__html : element.blockstext}}></span></div></div>
+                                                        {element.blocksimage.length ? 
+                                                            <div className="fade_in_block block_image"><img src={element.blocksimage} alt={work.title.rendered} /></div>
+                                                        : ''}
+                                                        {element.blockstext.length ?
+                                                            <div className="fade_in_block block_info"><div className="wrapper"><span dangerouslySetInnerHTML={{__html : element.blockstext}}></span></div></div>
+                                                        : ''}
                                                     </div>
                                                 )}
                                             
