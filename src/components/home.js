@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import $ from 'jquery';
 import ReactGA from 'react-ga'
+
 //modules
-import Footer from '../modules/footer'
 import Hero from '../modules/hero'
 import Singleproject from '../modules/single_project'
 
@@ -19,7 +19,7 @@ export default class Home extends Component {
         //jump to top
         window.scrollTo(0, 0)
         //fetch data
-        fetch('https://cdn.emilpriver.com/wp-json/wp/v2/works/')
+        fetch('https://api.emilpriver.com/wp-json/wp/v2/works/')
         .then(async (response) => {return await response.json()})
         .then(works => {
             setTimeout(() => {
@@ -78,7 +78,6 @@ export default class Home extends Component {
                     </div>
                 </section>
             </div>
-            <Footer />
         </div>
     );
   }
