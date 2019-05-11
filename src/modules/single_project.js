@@ -14,8 +14,8 @@ export default class work_loop_item extends React.Component{
                     </NavLink>
                 
                     <div className="project_info">
-                        <NavLink className="" to={element.link}><h2 >{element.title.rendered}</h2></NavLink>
                         <NavLink className="" to={element.link}><span >{element.project_info}</span></NavLink>
+                        <NavLink className="" to={element.link}><h2 >{element.title.rendered}</h2></NavLink>
                     </div>
             </div>
         )
