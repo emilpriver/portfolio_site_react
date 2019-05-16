@@ -54,11 +54,11 @@ export default class Menu extends React.Component{
                                 {
                                     this.state.white_background ? 
                                         this.state.header_menu_scrolled ?
-                                            <img className="header_img" src="/images/vitlogotyp.png" alt="Emil Privér logotyp" />
+                                            <img className="header_img" src="https://media.emilpriver.com/emilpriver/vitlogotyp.png" alt="Emil Privér logotyp" />
                                         : 
-                                            <img className="header_img" src="/images/logo.png" alt="Emil Privér logotyp" />
+                                            <img className="header_img" src="https://media.emilpriver.com/emilpriver/logo.png" alt="Emil Privér logotyp" />
                                     :
-                                        <img className="header_img" src="/images/vitlogotyp.png" alt="Emil Privér logotyp" />
+                                        <img className="header_img" src="https://media.emilpriver.com/emilpriver/vitlogotyp.png" alt="Emil Privér logotyp" />
                                 }
                             </NavLink>
                         </div>
